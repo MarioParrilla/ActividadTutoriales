@@ -1,0 +1,12 @@
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\bin\Debug\DI-UT1-Actividad1.1.exe.config
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\bin\Debug\DI-UT1-Actividad1.1.exe
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\bin\Debug\DI-UT1-Actividad1.1.pdb
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI-UT1-Actividad1.1.csproj.AssemblyReference.cache
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.Properties.Resources.resources
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI-UT1-Actividad1.1.csproj.GenerateResource.cache
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI-UT1-Actividad1.1.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI-UT1-Actividad1.1.exe
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI-UT1-Actividad1.1.pdb
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaInicial.resources
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaTema.resources
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaAccionesTutorial.resources

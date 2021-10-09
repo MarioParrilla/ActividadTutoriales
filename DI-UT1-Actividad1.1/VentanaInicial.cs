@@ -227,6 +227,16 @@ namespace DI_UT1_Actividad1._1
                 else if (categoria.Equals("Todos") && runFilterTODOS && tema.Equals("Todos"))//Si es el filtro de TODOS y le esta permitido funcionar al filtro
                 {
                     FiltroTodosTuto();
+                }else if (categoria.Equals("Todos") && !tema.Equals("Todos"))//Si es un tema de la bd
+                {
+                    dbConn.Open();
+                    command.Connection = dbConn;
+                    command.CommandText = "select t.ID_TUTORIAL, t.ID_TEMA, t.TITULO, t.CATEGORIA, t.FECHA, t.DESCRIPCION, t.IMAGEN, t.VIDEO from TUTORIAL t, TEMA te where t.id_tema=te.ID_TEMA and te.nombre = '" + tema + "'";
+                    OleDbDataAdapter da = new OleDbDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgvTutoriales.DataSource = dt;
+                    dbConn.Close();
                 }
             }
             catch (OleDbException eOleDb)

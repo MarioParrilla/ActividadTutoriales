@@ -58,6 +58,28 @@ namespace DI_UT1_Actividad1._1
                 mnuAcciones_AccionTema.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\modificar.png");
                 RellenarCampos();
             }
+
+            //Creamos toolTip para titulo y categoria
+            ToolTip tltEspacios = new ToolTip();
+            tltEspacios.ToolTipIcon = ToolTipIcon.Warning;
+            tltEspacios.ToolTipTitle = "¡Cuidado!";
+            tltEspacios.Active = true;
+            tltEspacios.ShowAlways = true;
+            tltEspacios.IsBalloon = true;
+            tltEspacios.SetToolTip(txtNombre, "No uses espacios en blanco ni al principio ni al final o se borrará el texto");
+            tltEspacios.SetToolTip(txtImagen, "No uses espacios en blanco ni al principio ni al final o se borrará el texto");
+
+            //Asignamos la tecla para  mnuAcciones_Accion
+            mnuAcciones_AccionTema.ShortcutKeys = Keys.Control | Keys.D;
+        }
+
+        private void ComprobarValores()
+        {
+            if (txtNombre.Text.Length > 1 && txtNombre.Text.StartsWith(" ") && txtNombre.Text.EndsWith(" ")) throw new Exception("No ha introducido valores!");
+            else if (txtNombre.Text.Length < 1) throw new Exception("No ha introducido valores!");
+
+            if (txtImagen.Text.Length > 1 && txtImagen.Text.StartsWith(" ") && txtImagen.Text.EndsWith(" ")) throw new Exception("No ha introducido valores!");
+            else if (txtImagen.Text.Length < 1) throw new Exception("No ha introducido valores!");
         }
 
         private void Visualizar(Acciones a, String url)
@@ -70,6 +92,7 @@ namespace DI_UT1_Actividad1._1
         {
             try
             {
+                ComprobarValores();
                 dbConn.Open();
 
                 OleDbCommand command = new OleDbCommand();
@@ -86,7 +109,7 @@ namespace DI_UT1_Actividad1._1
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex);
-                MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores! "+ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
 
@@ -96,6 +119,7 @@ namespace DI_UT1_Actividad1._1
         {
             try
             {
+                ComprobarValores();
                 dbConn.Open();
 
                 OleDbCommand command = new OleDbCommand();

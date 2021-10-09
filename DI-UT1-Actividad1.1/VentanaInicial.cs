@@ -368,12 +368,12 @@ namespace DI_UT1_Actividad1._1
 
         private void btnModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(null, Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial((Tutorial)dgvTutoriales.SelectedRows[0].DataBoundItem, Acciones.MODIFICAR);
         }
 
         private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(null, Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial((Tutorial)dgvTutoriales.SelectedRows[0].DataBoundItem, Acciones.MODIFICAR);
         }
 
         private void btnEliminarTutorial_Click(object sender, EventArgs e)

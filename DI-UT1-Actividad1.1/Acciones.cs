@@ -10,6 +10,8 @@ namespace DI_UT1_Actividad1._1
     {
         ANNDIR = 0,
         MODIFICAR = 1,
-        DETALLES = 3
+        DETALLES = 3,
+        IMAGEN = 4,
+        VIDEO = 5
     }
 }

@@ -34,9 +34,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_Accion = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAyuda_AcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAccion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtTitulo = new System.Windows.Forms.TextBox();
@@ -55,6 +53,8 @@ namespace DI_UT1_Actividad1._1
             this.lblVideo = new System.Windows.Forms.Label();
             this.btnVisualizarImagen = new System.Windows.Forms.Button();
             this.btnVisualizarVideo = new System.Windows.Forms.Button();
+            this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAyuda_AcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,15 +91,6 @@ namespace DI_UT1_Actividad1._1
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
             // 
-            // mnuAcciones_SalirVentanaPrincipal
-            // 
-            this.mnuAcciones_SalirVentanaPrincipal.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
-            this.mnuAcciones_SalirVentanaPrincipal.Name = "mnuAcciones_SalirVentanaPrincipal";
-            this.mnuAcciones_SalirVentanaPrincipal.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuAcciones_SalirVentanaPrincipal.Size = new System.Drawing.Size(137, 22);
-            this.mnuAcciones_SalirVentanaPrincipal.Text = "Salir";
-            this.mnuAcciones_SalirVentanaPrincipal.Click += new System.EventHandler(this.mnuAcciones_SalirVentanaPrincipal_Click);
-            // 
             // mnuAyuda
             // 
             this.mnuAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,15 +98,6 @@ namespace DI_UT1_Actividad1._1
             this.mnuAyuda.Name = "mnuAyuda";
             this.mnuAyuda.Size = new System.Drawing.Size(53, 20);
             this.mnuAyuda.Text = "A&yuda";
-            // 
-            // mnuAyuda_AcercaDe
-            // 
-            this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
-            this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
-            this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
-            this.mnuAyuda_AcercaDe.Text = "Acerca de";
-            this.mnuAyuda_AcercaDe.Click += new System.EventHandler(this.mnuAyuda_AcercaDe_Click);
             // 
             // btnAccion
             // 
@@ -263,6 +245,7 @@ namespace DI_UT1_Actividad1._1
             this.btnVisualizarImagen.TabIndex = 33;
             this.btnVisualizarImagen.Text = "Visualizar";
             this.btnVisualizarImagen.UseVisualStyleBackColor = true;
+            this.btnVisualizarImagen.Click += new System.EventHandler(this.btnVisualizarImagen_Click);
             // 
             // btnVisualizarVideo
             // 
@@ -272,6 +255,25 @@ namespace DI_UT1_Actividad1._1
             this.btnVisualizarVideo.TabIndex = 34;
             this.btnVisualizarVideo.Text = "Visualizar";
             this.btnVisualizarVideo.UseVisualStyleBackColor = true;
+            this.btnVisualizarVideo.Click += new System.EventHandler(this.btnVisualizarVideo_Click);
+            // 
+            // mnuAcciones_SalirVentanaPrincipal
+            // 
+            this.mnuAcciones_SalirVentanaPrincipal.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
+            this.mnuAcciones_SalirVentanaPrincipal.Name = "mnuAcciones_SalirVentanaPrincipal";
+            this.mnuAcciones_SalirVentanaPrincipal.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.mnuAcciones_SalirVentanaPrincipal.Size = new System.Drawing.Size(137, 22);
+            this.mnuAcciones_SalirVentanaPrincipal.Text = "Salir";
+            this.mnuAcciones_SalirVentanaPrincipal.Click += new System.EventHandler(this.mnuAcciones_SalirVentanaPrincipal_Click);
+            // 
+            // mnuAyuda_AcercaDe
+            // 
+            this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
+            this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
+            this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
+            this.mnuAyuda_AcercaDe.Text = "Acerca de";
+            this.mnuAyuda_AcercaDe.Click += new System.EventHandler(this.mnuAyuda_AcercaDe_Click);
             // 
             // VentanaAccionesTutorial
             // 

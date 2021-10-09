@@ -79,6 +79,12 @@
     <Compile Include="VentanaTema.Designer.cs">
       <DependentUpon>VentanaTema.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaVisualizar.Designer.cs">
+      <DependentUpon>VentanaVisualizar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="VentanaAccionesTutorial.resx">
       <DependentUpon>VentanaAccionesTutorial.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaTema.resx">
       <DependentUpon>VentanaTema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVisualizar.resx">
+      <DependentUpon>VentanaVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -115,6 +115,12 @@ namespace DI_UT1_Actividad1._1
             else if (txtCategoria.Text.Length < 1) txtCategoria.Text = "Sin Categoria";
         }
 
+        private void Visualizar(Acciones a, String url)
+        {
+            VentanaVisualizar vv = new VentanaVisualizar(a,url);
+            vv.ShowDialog();
+        }
+
         private void Annadir()
         {
             int id_Tema = 0;
@@ -188,6 +194,16 @@ namespace DI_UT1_Actividad1._1
             if (accion == Acciones.ANNDIR) Annadir();
             else if (accion == Acciones.MODIFICAR) Modificar();
             else this.Close();
+        }
+
+        private void btnVisualizarImagen_Click(object sender, EventArgs e)
+        {
+            Visualizar(Acciones.IMAGEN,txtImagen.Text);
+        }
+
+        private void btnVisualizarVideo_Click(object sender, EventArgs e)
+        {
+            Visualizar(Acciones.VIDEO, txtVideo.Text);
         }
     }
 }

@@ -95,8 +95,7 @@ namespace DI_UT1_Actividad1._1
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = dbConn;
 
-                String sentencia = "insert into tutorial(ID_TEMA,TITULO,CATEGORIA,FECHA,DESCRIPCION, IMAGEN, VIDEO) values((select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex].ToString() + "'), '" + txtTitulo + "', '" + txtCategoria +
-                    "', '" + dateFecha.Text + "', '" + txtDescripcion + "', '" + txtImagen + "', '" + txtVideo + "')";
+                String sentencia = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values((select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex].ToString() + "'), '" + txtTitulo.Text + "', '" + txtCategoria.Text +"', '" + dateFecha.Text + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
                 command.CommandText = sentencia;
                 command.ExecuteNonQuery();
 

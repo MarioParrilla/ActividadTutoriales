@@ -34,14 +34,15 @@ namespace DI_UT1_Actividad1._1
             picImagenUrl.Visible = false;
             wbYoutube.Visible = false;
 
-            if (a == Acciones.IMAGEN)
+            if (a == Acciones.IMAGEN)//Si queremos ver una imagen, activamos el componente y le ponemos su url
             {
                 picImagenUrl.ImageLocation = url;
                 picImagenUrl.Visible = true;
-            }else if (a == Acciones.VIDEO)
+            }else if (a == Acciones.VIDEO)//Si queremos ver un video, activamos el componente y le ponemos su url
             {
-                String codigoYoutbe = url.Substring(url.IndexOf("=")+1, (url.IndexOf("&") - url.IndexOf("="))-1); //https://www.youtube.com/watch?v=vbs6_xcrT5s&ab_channel=YUCAAN
-                Console.WriteLine(codigoYoutbe);
+                //Cogemos de la url la parte que nos interesa buscando los caracteres que se encuentran entre medias
+                String codigoYoutbe = url.Substring(url.IndexOf("=")+1, (url.IndexOf("&") - url.IndexOf("="))-1);
+
                 wbYoutube.DocumentText = "<html><head>" +
                     "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                     "</head><body>" +
@@ -55,14 +56,9 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)
+        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)//Mostramos la informacion sobre el acerca de
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

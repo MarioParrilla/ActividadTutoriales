@@ -53,9 +53,9 @@ namespace DI_UT1_Actividad1._1
             Consultas();
         }
 
-        private void PonerImagen()
+        private void PonerImagen()//Cargamos o no la imagen del tema
         {
-            if (wasStarted)
+            if (wasStarted)//Comprobaciones para evitar errores
             {
                 if (!dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString().Equals("")) picTema.ImageLocation = dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString();
                 else picTema.ImageLocation = "";
@@ -107,13 +107,13 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void Recargar()
+        private void Recargar()//Recargamos la informacion de los componentes
         {
 
             Consultas();
         }
 
-        private void EliminarTema()
+        private void EliminarTema()//Eliminamos temas
         {
             try
             {
@@ -137,7 +137,7 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void ActivarAccionesTema()
+        private void ActivarAccionesTema()//Activamos botones y elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
             btnAnnadirTema.Enabled = true;
@@ -150,7 +150,7 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_EliminarTema.Enabled = true;
         }
 
-        private void DesactivarAccionesTema()
+        private void DesactivarAccionesTema()//Desactivamos botones y elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
             btnAnnadirTema.Enabled = false;
@@ -169,51 +169,51 @@ namespace DI_UT1_Actividad1._1
             return vat.ShowDialog();//Devolvemos el boton apretado en la ventana
         }
 
-        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)
+        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)//Mostramos informacion sobre acerca de
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnAnnadirTema_Click(object sender, EventArgs e)
+        private void btnAnnadirTema_Click(object sender, EventArgs e)//Si se agrega un tema, se recarga la informacion de los componentes
         {
             if(CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR)
             == DialogResult.OK) Recargar();
         }
 
-        private void mnuAcciones_AnnadirTema_Click(object sender, EventArgs e)
+        private void mnuAcciones_AnnadirTema_Click(object sender, EventArgs e)//Si se agrega un tema, se recarga la informacion de los componentes
         {
             if(CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR)
             == DialogResult.OK) Recargar();
         }
 
-        private void btnModificarTema_Click(object sender, EventArgs e)
+        private void btnModificarTema_Click(object sender, EventArgs e)//Si se modifica un tema, se recarga la informacion de los componentes
         {
             if (CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.MODIFICAR)
                 == DialogResult.OK) Recargar();
         }
 
-        private void mnuAcciones_ModificarTema_Click(object sender, EventArgs e)
+        private void mnuAcciones_ModificarTema_Click(object sender, EventArgs e)//Si se modifica un tema, se recarga la informacion de los componentes
         {
             if (CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.MODIFICAR)
                 == DialogResult.OK) Recargar();
         }
 
-        private void btnEliminarTema_Click(object sender, EventArgs e)
+        private void btnEliminarTema_Click(object sender, EventArgs e)//Si se elimina un tema, se recarga la informacion de los componentes
         {
             EliminarTema();
         }
 
-        private void mnuAcciones_EliminarTema_Click(object sender, EventArgs e)
+        private void mnuAcciones_EliminarTema_Click(object sender, EventArgs e)//Si se elimina un tema, se recarga la informacion de los componentes
         {
             EliminarTema();
         }
 
-        private void dgvTema_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvTema_RowEnter(object sender, DataGridViewCellEventArgs e)//Cuando seleccionamos un elemento de la view, actualizamos la imagen
         {
             PonerImagen();
         }
 
-        private void mnuAcciones_SalirVentana_Click(object sender, EventArgs e)
+        private void mnuAcciones_SalirVentana_Click(object sender, EventArgs e)//Cerramos ventana
         {
             this.Close();
         }

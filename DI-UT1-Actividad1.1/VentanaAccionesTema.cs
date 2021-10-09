@@ -42,7 +42,7 @@ namespace DI_UT1_Actividad1._1
             dbConn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;"
                                         + @"Data Source = C:\tutorialesDB\tutorialesDB.mdb";
 
-            //Establecemos nombre de la ventana segun la accion
+            //Establecemos datos a los componentes dinamicos segun la accion
             if (a == Acciones.ANNDIR)
             {
                 this.Text = "Trabajo Tutoriales - Añadir";
@@ -69,12 +69,13 @@ namespace DI_UT1_Actividad1._1
             tltEspacios.SetToolTip(txtNombre, "No uses espacios en blanco ni al principio ni al final o se borrará el texto");
             tltEspacios.SetToolTip(txtImagen, "No uses espacios en blanco ni al principio ni al final o se borrará el texto");
 
-            //Asignamos la tecla para  mnuAcciones_Accion
+            //Asignamos la tecla para  mnuAcciones_AccionTema
             mnuAcciones_AccionTema.ShortcutKeys = Keys.Control | Keys.D;
         }
 
         private void ComprobarValores()
         {
+            //Comprobamos de forma simple que no pueda estar ni vacio ni que termine ni empice con espacios
             if (txtNombre.Text.Length > 1 && txtNombre.Text.StartsWith(" ") && txtNombre.Text.EndsWith(" ")) throw new Exception("No ha introducido valores!");
             else if (txtNombre.Text.Length < 1) throw new Exception("No ha introducido valores!");
 
@@ -84,6 +85,7 @@ namespace DI_UT1_Actividad1._1
 
         private void Visualizar(Acciones a, String url)
         {
+            //Creamos la ventana para visualizar la imagen
             VentanaVisualizar vv = new VentanaVisualizar(a, url);
             vv.Show();
         }
@@ -92,7 +94,9 @@ namespace DI_UT1_Actividad1._1
         {
             try
             {
-                ComprobarValores();
+                ComprobarValores();//Comprobamos que no este vacio...
+
+                //Trabajamos con la base de datos para añadir un tema
                 dbConn.Open();
 
                 OleDbCommand command = new OleDbCommand();
@@ -119,7 +123,9 @@ namespace DI_UT1_Actividad1._1
         {
             try
             {
-                ComprobarValores();
+                ComprobarValores();//Comprobamos que no este vacio...
+
+                //Trabajamos con la base de datos para añadir un tema
                 dbConn.Open();
 
                 OleDbCommand command = new OleDbCommand();
@@ -141,35 +147,35 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void RellenarCampos()
+        private void RellenarCampos()//Rellenamos nuestros componentes con el objeto recibido de la ventana padre
         {
             txtNombre.Text = t.Nombre;
             txtImagen.Text = t.Imagen;
         }
 
-        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)
+        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)//Mostramos un mensaje con informacion de acerca de
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void mnuAcciones_SalirTema_Click(object sender, EventArgs e)
+        private void mnuAcciones_SalirTema_Click(object sender, EventArgs e)//Salimos de la ventana
         {
             this.Close();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)//Salimos de la ventana
         {
             this.Close();
         }
 
-        private void btnAccionTema_Click(object sender, EventArgs e)
+        private void btnAccionTema_Click(object sender, EventArgs e)//Comprobamos que accion es, ya que es un componente dinamico
         {
             if (a == Acciones.ANNDIR) Annadir();
             else if (a == Acciones.MODIFICAR) Modificar();
             else this.Close();
         }
 
-        private void mnuAcciones_AccionTema_Click(object sender, EventArgs e)
+        private void mnuAcciones_AccionTema_Click(object sender, EventArgs e)//Comprobamos que accion es, ya que es un componente dinamico
         {
             if (a == Acciones.ANNDIR) Annadir();
             else if (a == Acciones.MODIFICAR) Modificar();

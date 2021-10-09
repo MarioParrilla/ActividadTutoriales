@@ -58,13 +58,13 @@ namespace DI_UT1_Actividad1._1
             runFilterTODOS = true;//Ponemos a funcionar el filtro de TODOS
         }
 
-        private void LimpiarComboboxes()
+        private void LimpiarComboboxes()//Limpiamos de elementos los comboboxes
         {
             cmbTema.Items.Clear();
             cmbCategoria.Items.Clear();
         }
 
-        private void Consultas()
+        private void Consultas()//Rellenamos los comboboxes con las consultas a la bd
         {
 
             try
@@ -121,7 +121,7 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void FiltroTodosTuto()
+        private void FiltroTodosTuto()//Creamos el filtro por defecto, que nos mostrará todos los temas y categorias y rellenamos la view
         {
             try { 
             dbConn.Open();//Abrimos conexion
@@ -147,7 +147,7 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void cmbTema_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbTema_SelectedIndexChanged(object sender, EventArgs e)//Cuando se cambie el elemento del combobox tema, se filtrará segun el nuevo elemento la view
         {
             tema = cmbTema.Items[cmbTema.SelectedIndex].ToString();
 
@@ -190,12 +190,12 @@ namespace DI_UT1_Actividad1._1
             catch (Exception ex)
             {
                 Console.WriteLine("Error exComboTemas: " + ex);
-                MessageBox.Show("Ha ocurrido un error 2: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
         }
 
-        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)//Cuando se cambie el elemento del combobox Categoria, se filtrará segun el nuevo elemento la view
         {
             categoria = cmbCategoria.Items[cmbCategoria.SelectedIndex].ToString();
 
@@ -249,11 +249,11 @@ namespace DI_UT1_Actividad1._1
             catch (Exception ex)
             {
                 Console.WriteLine("Error exComboTemas: " + ex);
-                MessageBox.Show("Ha ocurrido un error 2: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
         }
-        private void Recargar()
+        private void Recargar()//Recargamos toda la informacion de los componentes
         {
             LimpiarComboboxes();
             Consultas();
@@ -262,7 +262,7 @@ namespace DI_UT1_Actividad1._1
             cmbCategoria.SelectedIndex = 0;
         }
 
-        private void EliminarTutorial()
+        private void EliminarTutorial()//Eliminamos el tutorial de la bd
         {
             try
             {
@@ -281,12 +281,12 @@ namespace DI_UT1_Actividad1._1
             catch (Exception ex)
             {
                 Console.WriteLine("Error Eliminar Tutorial: " + ex);
-                MessageBox.Show("Ha ocurrido un error: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
         }
 
-        private void DesactivarAccionesTutorial()
+        private void DesactivarAccionesTutorial()//Desactivamos los botones y los elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
             btnAnnadirTutorial.Enabled = false;
@@ -300,7 +300,7 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_EliminarTutorial.Enabled = false;
             mnuAcciones_DetallesTutorial.Enabled = false;
         }
-        private void ActivarAccionesTutorial()
+        private void ActivarAccionesTutorial()//Activamos los botones y los elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
             btnAnnadirTutorial.Enabled = true;
@@ -332,76 +332,76 @@ namespace DI_UT1_Actividad1._1
             this.Close();
         }
 
-        private void mnuAyuda_Info_Click(object sender, EventArgs e)
+        private void mnuAyuda_Info_Click(object sender, EventArgs e)//Mostramos la informacion sobre el acerca de
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnAccionesTemas_Click(object sender, EventArgs e)
         {
-            if(CrearVentanaTemas()==DialogResult.Cancel) Recargar();
+            if(CrearVentanaTemas()==DialogResult.Cancel) Recargar();//Si se agrega un tema se actualiza la informacion
         }
 
         private void mnuAcciones_AccionesTemas_Click(object sender, EventArgs e)
         {
-            if (CrearVentanaTemas() == DialogResult.Cancel) Recargar();
+            if (CrearVentanaTemas() == DialogResult.Cancel) Recargar();//Si se agrega un tema se actualiza la informacion
         }
-        private void dgvTutoriales_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvTutoriales_RowEnter(object sender, DataGridViewCellEventArgs e)//Cuando se seleccione un elemento se activarán los botones
         {
             ActivarAccionesTutorial();
         }
 
         private void btnAnnadirTutorial_Click(object sender, EventArgs e)
         {
-            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR)==DialogResult.OK) Recargar();
+            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR)==DialogResult.OK) Recargar();//Si se agrega un tutorial se actualiza la informacion
         }
 
 
         private void mnuAcciones_AnnadirTutorial_Click(object sender, EventArgs e)
         {
-            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR) == DialogResult.OK) Recargar();
+            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR) == DialogResult.OK) Recargar();//Si se agrega un tutorial se actualiza la informacion
         }
 
 
-        private void btnModificarTutorial_Click(object sender, EventArgs e)
+        private void btnModificarTutorial_Click(object sender, EventArgs e)//Si se modificar un tutorial se actualiza la informacion
         {
             if(CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(), 
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
                 , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR)==DialogResult.OK) Recargar();
         }
 
-        private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)
+        private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)//Si se modificar un tutorial se actualiza la informacion
         {
             if (CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
                 , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR) == DialogResult.OK) Recargar();
         }
 
-        private void btnEliminarTutorial_Click(object sender, EventArgs e)
+        private void btnEliminarTutorial_Click(object sender, EventArgs e)//Si se elimina un tutorial se actualiza la informacion
         {
             EliminarTutorial();
         }
 
-        private void mnuAcciones_EliminarTutorial_Click(object sender, EventArgs e)
+        private void mnuAcciones_EliminarTutorial_Click(object sender, EventArgs e)//Si se elimina un tutorial se actualiza la informacion
         {
             EliminarTutorial();
         }
 
-        private void btnDetallesTutorial_Click(object sender, EventArgs e)
+        private void btnDetallesTutorial_Click(object sender, EventArgs e)//Mostramos la informacion del tutorial
         {
             CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
                 , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.DETALLES);
         }
 
-        private void mnuAcciones_DetallesTutorial_Click(object sender, EventArgs e)
+        private void mnuAcciones_DetallesTutorial_Click(object sender, EventArgs e)//Mostramos la informacion del tutorial
         {
             CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
                 , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.DETALLES);
         }
 
-        private void mnuAcciones_Recargar_Click(object sender, EventArgs e)
+        private void mnuAcciones_Recargar_Click(object sender, EventArgs e)//Recargamos la informacion
         {
             Recargar();
         }

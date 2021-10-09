@@ -44,7 +44,7 @@ namespace DI_UT1_Actividad1._1
 
             RellenarTemas();
 
-            //Establecemos nombre de la ventana segun la accion
+            //Establecemos datos a los componentes dinamicos segun la accion
             if (accion == Acciones.ANNDIR)
             {
                 this.Text = "Trabajo Tutoriales - Añadir";
@@ -85,7 +85,7 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_Accion.ShortcutKeys = Keys.Control | Keys.D;
         }
 
-        private void Deshabilitar()
+        private void Deshabilitar()//Desactivamos botones
         {
             txtTitulo.Enabled = false;
             cmbTema.Enabled = false;
@@ -96,7 +96,7 @@ namespace DI_UT1_Actividad1._1
             txtVideo.Enabled = false;
         }
 
-       private void RellenarCampos()
+       private void RellenarCampos()//Rellenamos los componentes con la informacion recibida del objeto por el padre
         {
             txtTitulo.Text = t.Titulo;
             for(int i = 0; i < cmbTema.Items.Count; i++) if (((Tema)cmbTema.Items[i]).Id_tema == t.Id_tema) cmbTema.SelectedIndex = i;//Ponemos el tema del objeto
@@ -107,7 +107,7 @@ namespace DI_UT1_Actividad1._1
             txtVideo.Text = t.Video;
         }
 
-        private void RellenarTemas()
+        private void RellenarTemas()//Rellenamos el combobox temas con una consulta a la bd
         {
             try
             {
@@ -133,7 +133,7 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void RellenarDatosDefault()
+        private void RellenarDatosDefault()//Si esta vacio o empieza y termina con espacios pues ponemos unos nombre por defecto
         {
             if (txtTitulo.Text.Length > 1 && txtTitulo.Text.StartsWith(" ") && txtTitulo.Text.EndsWith(" ")) txtTitulo.Text = "Sin Titulo";
             else if (txtTitulo.Text.Length < 1) txtTitulo.Text = "Sin Titulo";
@@ -142,13 +142,13 @@ namespace DI_UT1_Actividad1._1
             else if (txtCategoria.Text.Length < 1) txtCategoria.Text = "Sin Categoria";
         }
 
-        private void Visualizar(Acciones a, String url)
+        private void Visualizar(Acciones a, String url)//Creamos la ventana para poder ver segun la accion el video o la imagen
         {
             VentanaVisualizar vv = new VentanaVisualizar(a,url);
             vv.Show();
         }
 
-        private void Annadir()
+        private void Annadir()//Agregamos un tutorial, buscando primero el id del tema con una consulta y luego insertamos el tutorial con toda la informacion
         {
             int id_Tema = 0;
             try
@@ -186,10 +186,9 @@ namespace DI_UT1_Actividad1._1
                 MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
-
         }
 
-        private void Modificar()
+        private void Modificar()//Modificamos el tutorial segun los nuevos datos introducidos
         {
             try
             {
@@ -215,29 +214,29 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
-        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)
+        private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)//Mostramos informacion sobre el acerca de
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void mnuAcciones_SalirVentanaPrincipal_Click(object sender, EventArgs e)
+        private void mnuAcciones_SalirVentanaPrincipal_Click(object sender, EventArgs e)//Salimos de la ventana
         {
             this.Close();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)//Salimos de la ventana
         {
             this.Close();
         }
 
-        private void btnAccion_Click(object sender, EventArgs e)
+        private void btnAccion_Click(object sender, EventArgs e)//Comprobamos que accion es, ya que es un componente dinamico
         {
             if (accion == Acciones.ANNDIR) Annadir();
             else if (accion == Acciones.MODIFICAR) Modificar();
             else this.Close();
         }
 
-        private void mnuAcciones_Accion_Click(object sender, EventArgs e)
+        private void mnuAcciones_Accion_Click(object sender, EventArgs e)//Comprobamos que accion es, ya que es un componente dinamico
         {
             if (accion == Acciones.ANNDIR) Annadir();
             else if (accion == Acciones.MODIFICAR) Modificar();

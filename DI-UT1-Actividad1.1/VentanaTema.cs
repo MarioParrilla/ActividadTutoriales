@@ -35,19 +35,10 @@ namespace DI_UT1_Actividad1._1
             this.Font = Properties.Settings.Default.defaultFont;
             this.ForeColor = Properties.Settings.Default.defaultFontColor;
 
-            //Desabilitamos los botones de acciones con tema por defecto
-            btnAnnadirTema.Enabled = false;
-            btnModificarTema.Enabled = false;
-            btnEliminarTema.Enabled = false;
 
             //Establecemos valores predeterminados de la ventana
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
-            //Desabilitamos las acciones del menu acciones con tema por defecto
-            mnuAcciones_AnnadirTema.Enabled = false;
-            mnuAcciones_ModificarTema.Enabled = false;
-            mnuAcciones_EliminarTema.Enabled = false;
 
             //Realizamos las consultas para cargar los datos
             Consultas();
@@ -95,7 +86,8 @@ namespace DI_UT1_Actividad1._1
 
                     wasStarted = true;
                     PonerImagen();
-                    ActivarAccionesTema();
+
+                    ComprobarAcciones();
                 }
 
             }
@@ -104,6 +96,18 @@ namespace DI_UT1_Actividad1._1
                 MessageBox.Show("Error Consulta: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgvTema.DataSource = new DataTable();
                 dbConn.Close();
+            }
+        }
+
+        private void ComprobarAcciones()//Comprobamos cuantos elementos hay en la view
+        {
+            if (dgvTema.SelectedRows.Count == 0)
+            {
+                DesactivarAccionesTema();
+            }
+            else
+            {
+                ActivarAccionesTema();
             }
         }
 
@@ -140,12 +144,10 @@ namespace DI_UT1_Actividad1._1
         private void ActivarAccionesTema()//Activamos botones y elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
-            btnAnnadirTema.Enabled = true;
             btnModificarTema.Enabled = true;
             btnEliminarTema.Enabled = true;
 
             //Desabilitamos las acciones del menu acciones con tutorial por defecto
-            mnuAcciones_AnnadirTema.Enabled = true;
             mnuAcciones_ModificarTema.Enabled = true;
             mnuAcciones_EliminarTema.Enabled = true;
         }
@@ -153,12 +155,12 @@ namespace DI_UT1_Actividad1._1
         private void DesactivarAccionesTema()//Desactivamos botones y elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
-            btnAnnadirTema.Enabled = false;
+            btnAnnadirTema.Enabled = true;
             btnModificarTema.Enabled = false;
-            btnEliminarTema.Enabled = true;
+            btnEliminarTema.Enabled = false;
 
             //Desabilitamos las acciones del menu acciones con tutorial por defecto
-            mnuAcciones_AnnadirTema.Enabled = false;
+            mnuAcciones_AnnadirTema.Enabled = true;
             mnuAcciones_ModificarTema.Enabled = false;
             mnuAcciones_EliminarTema.Enabled = false;
         }
@@ -176,14 +178,12 @@ namespace DI_UT1_Actividad1._1
 
         private void btnAnnadirTema_Click(object sender, EventArgs e)//Si se agrega un tema, se recarga la informacion de los componentes
         {
-            if(CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR)
-            == DialogResult.OK) Recargar();
+            if (CrearVentanaAccionesTema(null, Acciones.ANNDIR) == DialogResult.OK) Recargar();
         }
 
         private void mnuAcciones_AnnadirTema_Click(object sender, EventArgs e)//Si se agrega un tema, se recarga la informacion de los componentes
         {
-            if(CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR)
-            == DialogResult.OK) Recargar();
+            if(CrearVentanaAccionesTema(null, Acciones.ANNDIR) == DialogResult.OK) Recargar();
         }
 
         private void btnModificarTema_Click(object sender, EventArgs e)//Si se modifica un tema, se recarga la informacion de los componentes

@@ -149,6 +149,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_SalirVentanaTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.mnuAcciones_SalirVentanaTema.Size = new System.Drawing.Size(180, 22);
             this.mnuAcciones_SalirVentanaTema.Text = "Salir";
+            this.mnuAcciones_SalirVentanaTema.Click += new System.EventHandler(this.mnuAcciones_SalirVentanaTema_Click);
             // 
             // mnuAyuda
             // 
@@ -163,7 +164,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
             this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
             this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(180, 22);
+            this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
             this.mnuAyuda_AcercaDe.Text = "Acerca de";
             this.mnuAyuda_AcercaDe.Click += new System.EventHandler(this.mnuAyuda_AcercaDe_Click);
             // 

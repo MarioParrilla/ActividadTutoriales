@@ -50,12 +50,21 @@ namespace DI_UT1_Actividad1._1
             dgvTutoriales.Columns["IMAGEN"].Visible = false;
             dgvTutoriales.Columns["VIDEO"].Visible = false;
 
+            ComprobarAcciones();
+
+            runFilterTODOS = true;//Ponemos a funcionar el filtro de TODOS
+        }
+
+        private void ComprobarAcciones()//Comprobamos cuantos elementos hay en la view
+        {
             if (dgvTutoriales.SelectedRows.Count == 0)
             {
                 DesactivarAccionesTutorial();
             }
-
-            runFilterTODOS = true;//Ponemos a funcionar el filtro de TODOS
+            else
+            {
+                ActivarAccionesTutorial();
+            }
         }
 
         private void LimpiarComboboxes()//Limpiamos de elementos los comboboxes
@@ -257,12 +266,13 @@ namespace DI_UT1_Actividad1._1
         {
             LimpiarComboboxes();
             Consultas();
+            ComprobarAcciones();
             FiltroTodosTuto();
             cmbTema.SelectedIndex = 0;
             cmbCategoria.SelectedIndex = 0;
         }
 
-        private void EliminarTutorial()//Eliminamos el tutorial de la bd
+        private void EliminarTutorial()//Eliminamos el tutorial de la bd y comprobamos si esta vacia la view6
         {
             try
             {
@@ -289,13 +299,13 @@ namespace DI_UT1_Actividad1._1
         private void DesactivarAccionesTutorial()//Desactivamos los botones y los elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
-            btnAnnadirTutorial.Enabled = false;
+            btnAnnadirTutorial.Enabled = true;
             btnModificarTutorial.Enabled = false;
             btnEliminarTutorial.Enabled = false;
             btnDetallesTutorial.Enabled = false;
 
             //Desabilitamos las acciones del menu acciones con tutorial por defecto
-            mnuAcciones_AnnadirTutorial.Enabled = false;
+            mnuAcciones_AnnadirTutorial.Enabled = true;
             mnuAcciones_ModificarTutorial.Enabled = false;
             mnuAcciones_EliminarTutorial.Enabled = false;
             mnuAcciones_DetallesTutorial.Enabled = false;
@@ -303,13 +313,11 @@ namespace DI_UT1_Actividad1._1
         private void ActivarAccionesTutorial()//Activamos los botones y los elementos del menu
         {
             //Desabilitamos los botones de acciones con tutorial por defecto
-            btnAnnadirTutorial.Enabled = true;
             btnModificarTutorial.Enabled = true;
             btnEliminarTutorial.Enabled = true;
             btnDetallesTutorial.Enabled = true;
 
             //Desabilitamos las acciones del menu acciones con tutorial por defecto
-            mnuAcciones_AnnadirTutorial.Enabled = true;
             mnuAcciones_ModificarTutorial.Enabled = true;
             mnuAcciones_EliminarTutorial.Enabled = true;
             mnuAcciones_DetallesTutorial.Enabled = true;

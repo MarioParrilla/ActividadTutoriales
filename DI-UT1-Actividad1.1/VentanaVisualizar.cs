@@ -34,25 +34,38 @@ namespace DI_UT1_Actividad1._1
             picImagenUrl.Visible = false;
             wbYoutube.Visible = false;
 
-            if (a == Acciones.IMAGEN)//Si queremos ver una imagen, activamos el componente y le ponemos su url
-            {
-                picImagenUrl.ImageLocation = url;
-                picImagenUrl.Visible = true;
-            }else if (a == Acciones.VIDEO)//Si queremos ver un video, activamos el componente y le ponemos su url
-            {
-                //Cogemos de la url la parte que nos interesa buscando los caracteres que se encuentran entre medias
-                String codigoYoutbe = url.Substring(url.IndexOf("=")+1, (url.IndexOf("&") - url.IndexOf("="))-1);
+            Visualizar();
+        }
 
-                wbYoutube.DocumentText = "<html><head>" +
-                    "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
-                    "</head><body>" +
-                    "<iframe width=\"100%\" height=\"100%\"" +
-                    " src=\"https://www.youtube.com/embed/" + codigoYoutbe + "?autoplay=1" +
-                    " frameborder=\"0\" allow=\"accelerometer; autoplay; " +
-                    "encrypted-media; gyroscope; picture-in-picture\" " +
-                    "allowfullscreen></iframe>" +
-                    "</body></html>";
-                wbYoutube.Visible = true;
+        private void Visualizar()
+        {
+            try
+            {
+                if (a == Acciones.IMAGEN)//Si queremos ver una imagen, activamos el componente y le ponemos su url
+                {
+                    picImagenUrl.ImageLocation = url;
+                    picImagenUrl.Visible = true;
+                }
+                else if (a == Acciones.VIDEO)//Si queremos ver un video, activamos el componente y le ponemos su url
+                {
+                    //Cogemos de la url la parte que nos interesa buscando los caracteres que se encuentran entre medias
+                    String codigoYoutbe = url.Substring(url.IndexOf("=") + 1, (url.IndexOf("&") - url.IndexOf("=")) - 1);
+
+                    wbYoutube.DocumentText = "<html><head>" +
+                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                        "</head><body>" +
+                        "<iframe width=\"100%\" height=\"100%\"" +
+                        " src=\"https://www.youtube.com/embed/" + codigoYoutbe + "?autoplay=1" +
+                        " frameborder=\"0\" allow=\"accelerometer; autoplay; " +
+                        "encrypted-media; gyroscope; picture-in-picture\" " +
+                        "allowfullscreen></iframe>" +
+                        "</body></html>";
+                    wbYoutube.Visible = true;
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine("Error Eliminar Tutorial: " + ex);
+                MessageBox.Show("No existe enlace valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

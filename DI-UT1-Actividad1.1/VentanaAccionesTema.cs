@@ -186,5 +186,10 @@ namespace DI_UT1_Actividad1._1
         {
             Visualizar(Acciones.IMAGEN, txtImagen.Text);
         }
+
+        private void mnuAcciones_SalirVentanaTema_Click(object sender, EventArgs e)//Cerramos la ventana
+        {
+            this.Close();
+        }
     }
 }

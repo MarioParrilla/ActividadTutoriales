@@ -35,6 +35,7 @@ namespace DI_UT1_Actividad1._1
             //Establecemos valores predeterminados de la ventana
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            dateFecha.CustomFormat = "dd/MM/yyyy";
 
             //Creamos la conexion con la bd
             dbConn = new OleDbConnection();
@@ -95,13 +96,11 @@ namespace DI_UT1_Actividad1._1
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = dbConn;
 
-                String sentencia = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values((select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex].ToString() + "'), '" + txtTitulo.Text + "', '" + txtCategoria.Text +"', '" + dateFecha.Text + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
-                command.CommandText = sentencia;
+                command.CommandText = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values((select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex] + "'), '" + txtTitulo.Text + "', '" + txtCategoria.Text + "', '" + dateFecha.Value.ToString().Substring(0, 11) + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
                 command.ExecuteNonQuery();
 
                 dbConn.Close();
-                this.Close();
-            }
+                this.Close();           }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: "+ex);

@@ -284,9 +284,6 @@ namespace DI_UT1_Actividad1._1
                 MessageBox.Show("Ha ocurrido un error: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
- 
-
-
         }
 
         private void DesactivarAccionesTutorial()

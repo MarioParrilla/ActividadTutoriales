@@ -49,7 +49,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_DetallesTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_Recargar = new System.Windows.Forms.ToolStripMenuItem();
-            this.accionesTemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAcciones_AccionesTemas = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,7 +202,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_DetallesTutorial,
             this.toolStripSeparator1,
             this.mnuAcciones_Recargar,
-            this.accionesTemasToolStripMenuItem,
+            this.mnuAcciones_AccionesTemas,
             this.toolStripSeparator2,
             this.mnuAcciones_SalirVentanaPrincipal});
             this.mnuAcciones.Name = "mnuAcciones";
@@ -259,14 +259,14 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_Recargar.Text = "Recargar";
             this.mnuAcciones_Recargar.Click += new System.EventHandler(this.mnuAcciones_Recargar_Click);
             // 
-            // accionesTemasToolStripMenuItem
+            // mnuAcciones_AccionesTemas
             // 
-            this.accionesTemasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("accionesTemasToolStripMenuItem.Image")));
-            this.accionesTemasToolStripMenuItem.Name = "accionesTemasToolStripMenuItem";
-            this.accionesTemasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.accionesTemasToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.accionesTemasToolStripMenuItem.Text = "Acciones Temas";
-            this.accionesTemasToolStripMenuItem.Click += new System.EventHandler(this.accionesTemasToolStripMenuItem_Click);
+            this.mnuAcciones_AccionesTemas.Image = ((System.Drawing.Image)(resources.GetObject("mnuAcciones_AccionesTemas.Image")));
+            this.mnuAcciones_AccionesTemas.Name = "mnuAcciones_AccionesTemas";
+            this.mnuAcciones_AccionesTemas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.mnuAcciones_AccionesTemas.Size = new System.Drawing.Size(198, 22);
+            this.mnuAcciones_AccionesTemas.Text = "Acciones Temas";
+            this.mnuAcciones_AccionesTemas.Click += new System.EventHandler(this.mnuAcciones_AccionesTemas_Click);
             // 
             // toolStripSeparator2
             // 
@@ -393,7 +393,7 @@ namespace DI_UT1_Actividad1._1
         private System.Windows.Forms.ToolStripMenuItem mnuAyuda;
         private System.Windows.Forms.ToolStripMenuItem mnuAyuda_AcercaDe;
         private System.Windows.Forms.ToolStripMenuItem mnuAcciones_SalirVentanaPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem accionesTemasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuAcciones_AccionesTemas;
         private System.Windows.Forms.Button btnAccionesTemas;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;

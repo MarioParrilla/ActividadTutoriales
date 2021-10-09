@@ -49,6 +49,12 @@
     <Compile Include="Acciones.cs" />
     <Compile Include="Tema.cs" />
     <Compile Include="Tutorial.cs" />
+    <Compile Include="VentanaAccionesTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAccionesTema.Designer.cs">
+      <DependentUpon>VentanaAccionesTema.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaAccionesTutorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="VentanaVisualizar.Designer.cs">
       <DependentUpon>VentanaVisualizar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaAccionesTema.resx">
+      <DependentUpon>VentanaAccionesTema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaAccionesTutorial.resx">
       <DependentUpon>VentanaAccionesTutorial.cs</DependentUpon>
     </EmbeddedResource>

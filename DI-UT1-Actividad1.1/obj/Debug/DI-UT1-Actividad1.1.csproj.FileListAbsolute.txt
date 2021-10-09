@@ -11,3 +11,4 @@ C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-A
 C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaTema.resources
 C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaAccionesTutorial.resources
 C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaVisualizar.resources
+C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\obj\Debug\DI_UT1_Actividad1._1.VentanaAccionesTema.resources

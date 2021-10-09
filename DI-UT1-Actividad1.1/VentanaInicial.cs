@@ -315,10 +315,10 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_DetallesTutorial.Enabled = true;
         }
 
-        private void CrearVentanaTemas()
+        private DialogResult CrearVentanaTemas()
         {
             vt = new VentanaTema();//Creamos la ventana para las acciones con Temas
-            vt.ShowDialog();
+            return vt.ShowDialog();
         }
 
         private DialogResult CrearVentanaAccionesTutorial(Tutorial t,Acciones a)
@@ -339,12 +339,12 @@ namespace DI_UT1_Actividad1._1
 
         private void btnAccionesTemas_Click(object sender, EventArgs e)
         {
-            CrearVentanaTemas();
+            if(CrearVentanaTemas()==DialogResult.Cancel) Recargar();
         }
 
-        private void accionesTemasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuAcciones_AccionesTemas_Click(object sender, EventArgs e)
         {
-            CrearVentanaTemas();
+            if (CrearVentanaTemas() == DialogResult.Cancel) Recargar();
         }
         private void dgvTutoriales_RowEnter(object sender, DataGridViewCellEventArgs e)
         {

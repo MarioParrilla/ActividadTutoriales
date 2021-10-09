@@ -163,6 +163,12 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_EliminarTema.Enabled = false;
         }
 
+        private DialogResult CrearVentanaAccionesTema(Tema t, Acciones a)
+        {
+            VentanaAccionesTema vat = new VentanaAccionesTema(t, a);//Creamos la ventana para las acciones con tutoriales
+            return vat.ShowDialog();//Devolvemos el boton apretado en la ventana
+        }
+
         private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,22 +176,24 @@ namespace DI_UT1_Actividad1._1
 
         private void btnAnnadirTema_Click(object sender, EventArgs e)
         {
-
+            CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR);
         }
 
         private void mnuAcciones_AnnadirTema_Click(object sender, EventArgs e)
         {
-
+            CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.ANNDIR);
         }
 
         private void btnModificarTema_Click(object sender, EventArgs e)
         {
-
+            if (CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.MODIFICAR)
+                == DialogResult.OK) Recargar();
         }
 
         private void mnuAcciones_ModificarTema_Click(object sender, EventArgs e)
         {
-
+            if (CrearVentanaAccionesTema(new Tema(int.Parse(dgvTema.SelectedRows[0].Cells["id_tema"].Value.ToString()), dgvTema.SelectedRows[0].Cells["nombre"].Value.ToString(), dgvTema.SelectedRows[0].Cells["imagen"].Value.ToString()), Acciones.MODIFICAR)
+                == DialogResult.OK) Recargar();
         }
 
         private void btnEliminarTema_Click(object sender, EventArgs e)

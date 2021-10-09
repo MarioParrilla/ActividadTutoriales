@@ -58,6 +58,12 @@ namespace DI_UT1_Actividad1._1
             runFilterTODOS = true;//Ponemos a funcionar el filtro de TODOS
         }
 
+        private void LimpiarComboboxes()
+        {
+            cmbTema.Items.Clear();
+            cmbCategoria.Items.Clear();
+        }
+
         private void Consultas()
         {
 
@@ -352,6 +358,8 @@ namespace DI_UT1_Actividad1._1
 
         private void mnuAcciones_Recargar_Click(object sender, EventArgs e)
         {
+            LimpiarComboboxes();
+            Consultas();
             FiltroTodosTuto();
             cmbTema.SelectedIndex = 0;
             cmbCategoria.SelectedIndex = 0;

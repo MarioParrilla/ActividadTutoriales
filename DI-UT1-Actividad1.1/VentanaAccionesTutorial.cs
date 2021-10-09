@@ -89,14 +89,27 @@ namespace DI_UT1_Actividad1._1
 
         private void Annadir()
         {
+            int id_Tema = 0;
             try
             {
                 dbConn.Open();
 
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = dbConn;
+                command.CommandText = "select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex] + "'";
+                dr = command.ExecuteReader();
 
-                command.CommandText = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values((select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex] + "'), '" + txtTitulo.Text + "', '" + txtCategoria.Text + "', '" + dateFecha.Value.ToString().Substring(0, 11) + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
+                while (dr.Read())
+                {
+                    id_Tema = int.Parse(dr["ID_TEMA"].ToString());
+                }
+
+                dr.Close();
+                dbConn.Close();
+
+                dbConn.Open();
+
+                command.CommandText = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values("+id_Tema+", '" + txtTitulo.Text + "', '" + txtCategoria.Text + "', '" + dateFecha.Value.ToString().Substring(0, 11) + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
                 command.ExecuteNonQuery();
 
                 dbConn.Close();

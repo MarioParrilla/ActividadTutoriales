@@ -191,7 +191,28 @@ namespace DI_UT1_Actividad1._1
 
         private void Modificar()
         {
+            try
+            {
+                dbConn.Open();
 
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = dbConn;
+
+                command.CommandText = "update tutorial set id_tema = " + ((Tema)cmbTema.SelectedItem).Id_tema + ", titulo = '" + txtTitulo.Text + "', categoria = '" 
+                    + txtCategoria.Text + "', fecha = '" + dateFecha.Value.ToString().Substring(0, 11) + "', descripcion = '" + txtDescripcion.Text + "', imagen = '" 
+                    + txtImagen.Text + "', video= '" + txtVideo.Text + "' where id_tutorial = "+ t.Id_tutorial;
+                command.ExecuteNonQuery();
+                dbConn.Close();
+
+                //Si todo ha funcionado bien le dicemos que devuelva la respuesta de boton de OK
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dbConn.Close();
+            }
         }
 
         private void mnuAyuda_AcercaDe_Click(object sender, EventArgs e)

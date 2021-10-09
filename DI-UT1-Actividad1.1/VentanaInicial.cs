@@ -368,16 +368,16 @@ namespace DI_UT1_Actividad1._1
 
         private void btnModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(), 
+            if(CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(), 
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
-                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR);
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR)==DialogResult.OK) Recargar();
         }
 
         private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
+            if (CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
                 dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
-                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR);
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR) == DialogResult.OK) Recargar();
         }
 
         private void btnEliminarTutorial_Click(object sender, EventArgs e)

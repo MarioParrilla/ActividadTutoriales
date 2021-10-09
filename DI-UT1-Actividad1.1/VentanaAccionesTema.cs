@@ -71,6 +71,10 @@ namespace DI_UT1_Actividad1._1
             try
             {
                 dbConn.Open();
+
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = dbConn;
+
                 command.CommandText = "insert into tema(NOMBRE, IMAGEN) values('" + txtNombre.Text + "', '" + txtImagen.Text + "')";
                 command.ExecuteNonQuery();
                 dbConn.Close();

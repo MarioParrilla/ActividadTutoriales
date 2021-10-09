@@ -27,10 +27,6 @@ namespace DI_UT1_Actividad1._1
 
         private void VentanaInicial_Load(object sender, EventArgs e)
         {
-            //Desabilitamos por defecto los comboBox
-            cmbCategoria.Enabled = false;
-            cmbTema.Enabled = false;
-
             //Realizamos las consultas para cargar los datos
             Consultas();
 
@@ -55,16 +51,39 @@ namespace DI_UT1_Actividad1._1
             runFilterTODOS = true;//Ponemos a funcionar el filtro de TODOS
         }
 
-        private void ComprobarAcciones()//Comprobamos cuantos elementos hay en la view
+        private void ComprobarAcciones()//Comprobamos cuantos elementos hay en la view y tambien comprobamos si los select tienen elementos
         {
-            if (dgvTutoriales.SelectedRows.Count == 0)
+            if (dgvTutoriales.SelectedRows.Count == 0)//Comprobamos los elementos de la view
             {
                 DesactivarAccionesTutorial();
+
             }
             else
             {
                 ActivarAccionesTutorial();
             }
+
+            if(cmbTema.Items.Count < 2)//Comprobamos los elementos del combobox de temas y si segun sus elementos la opcion de añadir se habilitará o no
+            {
+                btnAnnadirTutorial.Enabled = false;
+                mnuAcciones_AnnadirTutorial.Enabled = false;
+            }
+            else
+            {
+                btnAnnadirTutorial.Enabled = true;
+                mnuAcciones_AnnadirTutorial.Enabled = true;
+            }
+
+            if (cmbTema.Items.Count < 2) {//Comprobamos los elementos de los comboboxes y se habilitaran o no
+                cmbTema.Enabled = false;
+            }
+            else cmbTema.Enabled = true;
+
+            if (cmbCategoria.Items.Count < 2)
+            {
+                cmbCategoria.Enabled = false;
+            }
+            else cmbCategoria.Enabled = true;
         }
 
         private void LimpiarComboboxes()//Limpiamos de elementos los comboboxes

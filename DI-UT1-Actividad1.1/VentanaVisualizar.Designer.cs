@@ -37,6 +37,7 @@ namespace DI_UT1_Actividad1._1
             // picImagenUrl
             // 
             this.picImagenUrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picImagenUrl.InitialImage = null;
             this.picImagenUrl.Location = new System.Drawing.Point(0, 0);
             this.picImagenUrl.Name = "picImagenUrl";
             this.picImagenUrl.Size = new System.Drawing.Size(575, 387);

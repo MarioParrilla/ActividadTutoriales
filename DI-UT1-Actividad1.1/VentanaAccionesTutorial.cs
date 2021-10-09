@@ -42,6 +42,8 @@ namespace DI_UT1_Actividad1._1
             dbConn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;"
                                         + @"Data Source = C:\tutorialesDB\tutorialesDB.mdb";
 
+            RellenarTemas();
+
             //Establecemos nombre de la ventana segun la accion
             if (accion == Acciones.ANNDIR)
             {
@@ -56,6 +58,8 @@ namespace DI_UT1_Actividad1._1
                 btnAccion.Text = "Modificar";
                 mnuAcciones_Accion.Text = "Modificar";
                 mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\modificar.png");
+                RellenarCampos();
+                
             }
             else
             {
@@ -63,6 +67,8 @@ namespace DI_UT1_Actividad1._1
                 btnAccion.Text = "Volver";
                 mnuAcciones_Accion.Text = "Volver";
                 mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\volver.png");
+                RellenarCampos();
+                Deshabilitar();
             }
 
             //Creamos toolTip para titulo y categoria
@@ -77,7 +83,28 @@ namespace DI_UT1_Actividad1._1
 
             //Asignamos la tecla para  mnuAcciones_Accion
             mnuAcciones_Accion.ShortcutKeys = Keys.Control | Keys.D;
-            RellenarTemas();
+        }
+
+        private void Deshabilitar()
+        {
+            txtTitulo.Enabled = false;
+            cmbTema.Enabled = false;
+            txtCategoria.Enabled = false;
+            dateFecha.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtImagen.Enabled = false;
+            txtVideo.Enabled = false;
+        }
+
+       private void RellenarCampos()
+        {
+            txtTitulo.Text = t.Titulo;
+            for(int i = 0; i < cmbTema.Items.Count; i++) if (((Tema)cmbTema.Items[i]).Id_tema == t.Id_tema) cmbTema.SelectedIndex = i;//Ponemos el tema del objeto
+            txtCategoria.Text = t.Categoria;
+            dateFecha.Value = DateTime.Parse(t.Fecha);
+            txtDescripcion.Text = t.Descripcion;
+            txtImagen.Text = t.Imagen;
+            txtVideo.Text = t.Video;
         }
 
         private void RellenarTemas()
@@ -88,12 +115,12 @@ namespace DI_UT1_Actividad1._1
                 command.Connection = dbConn;
 
                 //Realizamos consulta de los nombre de temas
-                command.CommandText = "select nombre from tema";
+                command.CommandText = "select id_tema,nombre from tema";
                 dr = command.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    cmbTema.Items.Add(dr["nombre"].ToString());
+                    cmbTema.Items.Add(new Tema(int.Parse(dr["id_tema"].ToString()), dr["nombre"].ToString(),""));
                 }
 
                 dr.Close();

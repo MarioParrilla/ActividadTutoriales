@@ -368,12 +368,16 @@ namespace DI_UT1_Actividad1._1
 
         private void btnModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial((Tutorial)dgvTutoriales.SelectedRows[0].DataBoundItem, Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(), 
+                dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR);
         }
 
         private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial((Tutorial)dgvTutoriales.SelectedRows[0].DataBoundItem, Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
+                dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.MODIFICAR);
         }
 
         private void btnEliminarTutorial_Click(object sender, EventArgs e)
@@ -388,12 +392,16 @@ namespace DI_UT1_Actividad1._1
 
         private void btnDetallesTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(null, Acciones.DETALLES);
+            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
+                dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.DETALLES);
         }
 
         private void mnuAcciones_DetallesTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(null, Acciones.DETALLES);
+            CrearVentanaAccionesTutorial(new Tutorial(int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TUTORIAL"].Value.ToString()), int.Parse(dgvTutoriales.SelectedRows[0].Cells["ID_TEMA"].Value.ToString()), dgvTutoriales.SelectedRows[0].Cells["TITULO"].Value.ToString(),
+                dgvTutoriales.SelectedRows[0].Cells["CATEGORIA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["FECHA"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["DESCRIPCION"].Value.ToString(), dgvTutoriales.SelectedRows[0].Cells["IMAGEN"].Value.ToString()
+                , dgvTutoriales.SelectedRows[0].Cells["VIDEO"].Value.ToString()), Acciones.DETALLES);
         }
 
         private void mnuAcciones_Recargar_Click(object sender, EventArgs e)

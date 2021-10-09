@@ -118,6 +118,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\icons\volver.png" />
     <Content Include="Resources\icons\recargar.png" />
     <Content Include="Resources\icons\acercaDe.png" />
     <Content Include="Resources\icons\annadir.png" />

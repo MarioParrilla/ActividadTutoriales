@@ -253,9 +253,39 @@ namespace DI_UT1_Actividad1._1
                 dbConn.Close();
             }
         }
+        private void Recargar()
+        {
+            LimpiarComboboxes();
+            Consultas();
+            FiltroTodosTuto();
+            cmbTema.SelectedIndex = 0;
+            cmbCategoria.SelectedIndex = 0;
+        }
 
         private void EliminarTutorial()
         {
+            try
+            {
+                if (MessageBox.Show("¿Estas seguro que quieres eliminarlo?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    dbConn.Open();
+                    OleDbCommand commamd = new OleDbCommand();
+                    commamd.Connection = dbConn;
+                    commamd.CommandText = "delete from tutorial where id_tutorial = " + dgvTutoriales.SelectedRows[0].Cells["id_tutorial"].Value.ToString();
+                    commamd.ExecuteNonQuery();
+
+                    dbConn.Close();
+                    Recargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error Eliminar Tutorial: " + ex);
+                MessageBox.Show("Ha ocurrido un error: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dbConn.Close();
+            }
+ 
+
 
         }
 
@@ -294,9 +324,9 @@ namespace DI_UT1_Actividad1._1
             vt.ShowDialog();
         }
 
-        private DialogResult CrearVentanaAccionesTutorial(Acciones a)
+        private DialogResult CrearVentanaAccionesTutorial(Tutorial t,Acciones a)
         {
-            VentanaAccionesTutorial vat = new VentanaAccionesTutorial(null,a);//Creamos la ventana para las acciones con tutoriales
+            VentanaAccionesTutorial vat = new VentanaAccionesTutorial(t, a);//Creamos la ventana para las acciones con tutoriales
             return vat.ShowDialog();//Devolvemos el boton apretado en la ventana
         }
 
@@ -326,24 +356,24 @@ namespace DI_UT1_Actividad1._1
 
         private void btnAnnadirTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.ANNDIR);
+            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR)==DialogResult.OK) Recargar();
         }
 
 
         private void mnuAcciones_AnnadirTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.ANNDIR);
+            if (CrearVentanaAccionesTutorial(null, Acciones.ANNDIR) == DialogResult.OK) Recargar();
         }
 
 
         private void btnModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial(null, Acciones.MODIFICAR);
         }
 
         private void mnuAcciones_ModificarTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.MODIFICAR);
+            CrearVentanaAccionesTutorial(null, Acciones.MODIFICAR);
         }
 
         private void btnEliminarTutorial_Click(object sender, EventArgs e)
@@ -358,21 +388,17 @@ namespace DI_UT1_Actividad1._1
 
         private void btnDetallesTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.DETALLES);
+            CrearVentanaAccionesTutorial(null, Acciones.DETALLES);
         }
 
         private void mnuAcciones_DetallesTutorial_Click(object sender, EventArgs e)
         {
-            CrearVentanaAccionesTutorial(Acciones.DETALLES);
+            CrearVentanaAccionesTutorial(null, Acciones.DETALLES);
         }
 
         private void mnuAcciones_Recargar_Click(object sender, EventArgs e)
         {
-            LimpiarComboboxes();
-            Consultas();
-            FiltroTodosTuto();
-            cmbTema.SelectedIndex = 0;
-            cmbCategoria.SelectedIndex = 0;
+            Recargar();
         }
     }
 }

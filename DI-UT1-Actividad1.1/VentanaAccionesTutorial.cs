@@ -47,17 +47,36 @@ namespace DI_UT1_Actividad1._1
             {
                 this.Text = "Trabajo Tutoriales - Añadir";
                 btnAccion.Text = "Añadir";
+                mnuAcciones_Accion.Text = "Añadir";
+                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\annadir.png");
             }
             else if(accion == Acciones.MODIFICAR)
             {
                 this.Text = "Trabajo Tutoriales - Modificar";
                 btnAccion.Text = "Modificar";
+                mnuAcciones_Accion.Text = "Modificar";
+                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\modificar.png");
             }
             else
             {
                 this.Text = "Trabajo Tutoriales - Detalles";
                 btnAccion.Text = "Volver";
+                mnuAcciones_Accion.Text = "Volver";
+                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\volver.png");
             }
+
+            //Creamos toolTip para titulo y categoria
+            ToolTip tltEspacios = new ToolTip();
+            tltEspacios.ToolTipIcon = ToolTipIcon.Warning;
+            tltEspacios.ToolTipTitle = "¡Cuidado!";
+            tltEspacios.Active = true;
+            tltEspacios.ShowAlways = true;
+            tltEspacios.IsBalloon = true;
+            tltEspacios.SetToolTip(txtTitulo,"No uses espacios en blanco ni al principio ni al final o se borrará el texto");
+            tltEspacios.SetToolTip(txtCategoria,"No uses espacios en blanco ni al principio ni al final o se borrará el texto");
+
+            //Asignamos la tecla para  mnuAcciones_Accion
+            mnuAcciones_Accion.ShortcutKeys = Keys.Control | Keys.D;
             RellenarTemas();
         }
 
@@ -87,6 +106,15 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
+        private void RellenarDatosDefault()
+        {
+            if (txtTitulo.Text.Length > 1 && txtTitulo.Text.StartsWith(" ") && txtTitulo.Text.EndsWith(" ")) txtTitulo.Text = "Sin Titulo";
+            else if (txtTitulo.Text.Length < 1) txtTitulo.Text = "Sin Titulo";
+
+            if (txtCategoria.Text.Length > 1 && txtCategoria.Text.StartsWith(" ") && txtCategoria.Text.EndsWith(" ")) txtCategoria.Text = "Sin Categoria";
+            else if (txtCategoria.Text.Length < 1) txtCategoria.Text = "Sin Categoria";
+        }
+
         private void Annadir()
         {
             int id_Tema = 0;
@@ -98,6 +126,8 @@ namespace DI_UT1_Actividad1._1
                 command.Connection = dbConn;
                 command.CommandText = "select id_tema from tema where nombre = '" + cmbTema.Items[cmbTema.SelectedIndex] + "'";
                 dr = command.ExecuteReader();
+
+                RellenarDatosDefault();
 
                 while (dr.Read())
                 {
@@ -111,13 +141,16 @@ namespace DI_UT1_Actividad1._1
 
                 command.CommandText = "insert into tutorial(ID_TEMA, TITULO, CATEGORIA, FECHA, DESCRIPCION, IMAGEN, VIDEO) values("+id_Tema+", '" + txtTitulo.Text + "', '" + txtCategoria.Text + "', '" + dateFecha.Value.ToString().Substring(0, 11) + "', '" + txtDescripcion.Text + "', '" + txtImagen.Text + "', '" + txtVideo.Text + "')";
                 command.ExecuteNonQuery();
-
                 dbConn.Close();
-                this.Close();           }
+
+                //Si todo ha funcionado bien le dicemos que devuelva la respuesta de boton de OK
+                this.DialogResult = DialogResult.OK;
+
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: "+ex);
-                MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores!: "+ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error: ¡Introduce todos los valores!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbConn.Close();
             }
 
@@ -144,6 +177,13 @@ namespace DI_UT1_Actividad1._1
         }
 
         private void btnAccion_Click(object sender, EventArgs e)
+        {
+            if (accion == Acciones.ANNDIR) Annadir();
+            else if (accion == Acciones.MODIFICAR) Modificar();
+            else this.Close();
+        }
+
+        private void mnuAcciones_Accion_Click(object sender, EventArgs e)
         {
             if (accion == Acciones.ANNDIR) Annadir();
             else if (accion == Acciones.MODIFICAR) Modificar();

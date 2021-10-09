@@ -37,27 +37,27 @@ namespace DI_UT1_Actividad1._1
             this.label1 = new System.Windows.Forms.Label();
             this.lblTutoriales = new System.Windows.Forms.Label();
             this.gpbBotonesTutoriales = new System.Windows.Forms.GroupBox();
-            this.mnuInicio = new System.Windows.Forms.MenuStrip();
-            this.mnuAcciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dgvTutoriales = new System.Windows.Forms.DataGridView();
-            this.btnAccionesTemas = new System.Windows.Forms.Button();
             this.btnDetallesTutorial = new System.Windows.Forms.Button();
             this.btnAnnadirTutorial = new System.Windows.Forms.Button();
             this.btnModificarTutorial = new System.Windows.Forms.Button();
             this.btnEliminarTutorial = new System.Windows.Forms.Button();
+            this.mnuInicio = new System.Windows.Forms.MenuStrip();
+            this.mnuAcciones = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_AnnadirTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_ModificarTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_EliminarTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_DetallesTutorial = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_Recargar = new System.Windows.Forms.ToolStripMenuItem();
             this.accionesTemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda_AcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dgvTutoriales = new System.Windows.Forms.DataGridView();
+            this.btnAccionesTemas = new System.Windows.Forms.Button();
             this.gpbBotonesTutoriales.SuspendLayout();
             this.mnuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTutoriales)).BeginInit();
@@ -126,91 +126,6 @@ namespace DI_UT1_Actividad1._1
             this.gpbBotonesTutoriales.TabStop = false;
             this.gpbBotonesTutoriales.Text = "Tutoriales";
             // 
-            // mnuInicio
-            // 
-            this.mnuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAcciones,
-            this.mnuAyuda});
-            this.mnuInicio.Location = new System.Drawing.Point(0, 0);
-            this.mnuInicio.Name = "mnuInicio";
-            this.mnuInicio.Size = new System.Drawing.Size(779, 24);
-            this.mnuInicio.TabIndex = 14;
-            this.mnuInicio.Text = "menuStrip1";
-            // 
-            // mnuAcciones
-            // 
-            this.mnuAcciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAcciones_AnnadirTutorial,
-            this.mnuAcciones_ModificarTutorial,
-            this.mnuAcciones_EliminarTutorial,
-            this.mnuAcciones_DetallesTutorial,
-            this.toolStripSeparator1,
-            this.mnuAcciones_Recargar,
-            this.accionesTemasToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.mnuAcciones_SalirVentanaPrincipal});
-            this.mnuAcciones.Name = "mnuAcciones";
-            this.mnuAcciones.Size = new System.Drawing.Size(67, 20);
-            this.mnuAcciones.Text = "&Acciones";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(195, 6);
-            // 
-            // mnuAyuda
-            // 
-            this.mnuAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAyuda_AcercaDe});
-            this.mnuAyuda.Name = "mnuAyuda";
-            this.mnuAyuda.Size = new System.Drawing.Size(53, 20);
-            this.mnuAyuda.Text = "A&yuda";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // dgvTutoriales
-            // 
-            this.dgvTutoriales.AllowUserToAddRows = false;
-            this.dgvTutoriales.AllowUserToDeleteRows = false;
-            this.dgvTutoriales.AllowUserToResizeRows = false;
-            this.dgvTutoriales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvTutoriales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dgvTutoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTutoriales.Location = new System.Drawing.Point(25, 69);
-            this.dgvTutoriales.MultiSelect = false;
-            this.dgvTutoriales.Name = "dgvTutoriales";
-            this.dgvTutoriales.ReadOnly = true;
-            this.dgvTutoriales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTutoriales.Size = new System.Drawing.Size(414, 343);
-            this.dgvTutoriales.TabIndex = 15;
-            // 
-            // btnAccionesTemas
-            // 
-            this.btnAccionesTemas.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAccionesTemas.Image = ((System.Drawing.Image)(resources.GetObject("btnAccionesTemas.Image")));
-            this.btnAccionesTemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccionesTemas.Location = new System.Drawing.Point(573, 102);
-            this.btnAccionesTemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAccionesTemas.Name = "btnAccionesTemas";
-            this.btnAccionesTemas.Size = new System.Drawing.Size(180, 35);
-            this.btnAccionesTemas.TabIndex = 3;
-            this.btnAccionesTemas.Text = "Acciones Temas";
-            this.btnAccionesTemas.UseVisualStyleBackColor = false;
-            this.btnAccionesTemas.Click += new System.EventHandler(this.btnAccionesTemas_Click);
-            // 
             // btnDetallesTutorial
             // 
             this.btnDetallesTutorial.BackColor = System.Drawing.SystemColors.Control;
@@ -267,6 +182,33 @@ namespace DI_UT1_Actividad1._1
             this.btnEliminarTutorial.UseVisualStyleBackColor = false;
             this.btnEliminarTutorial.Click += new System.EventHandler(this.btnEliminarTutorial_Click);
             // 
+            // mnuInicio
+            // 
+            this.mnuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAcciones,
+            this.mnuAyuda});
+            this.mnuInicio.Location = new System.Drawing.Point(0, 0);
+            this.mnuInicio.Name = "mnuInicio";
+            this.mnuInicio.Size = new System.Drawing.Size(779, 24);
+            this.mnuInicio.TabIndex = 14;
+            this.mnuInicio.Text = "menuStrip1";
+            // 
+            // mnuAcciones
+            // 
+            this.mnuAcciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAcciones_AnnadirTutorial,
+            this.mnuAcciones_ModificarTutorial,
+            this.mnuAcciones_EliminarTutorial,
+            this.mnuAcciones_DetallesTutorial,
+            this.toolStripSeparator1,
+            this.mnuAcciones_Recargar,
+            this.accionesTemasToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.mnuAcciones_SalirVentanaPrincipal});
+            this.mnuAcciones.Name = "mnuAcciones";
+            this.mnuAcciones.Size = new System.Drawing.Size(67, 20);
+            this.mnuAcciones.Text = "&Acciones";
+            // 
             // mnuAcciones_AnnadirTutorial
             // 
             this.mnuAcciones_AnnadirTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.annadir;
@@ -303,6 +245,11 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_DetallesTutorial.Text = "Detalles";
             this.mnuAcciones_DetallesTutorial.Click += new System.EventHandler(this.mnuAcciones_DetallesTutorial_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
+            // 
             // mnuAcciones_Recargar
             // 
             this.mnuAcciones_Recargar.Image = global::DI_UT1_Actividad1._1.Properties.Resources.recargar;
@@ -321,6 +268,11 @@ namespace DI_UT1_Actividad1._1
             this.accionesTemasToolStripMenuItem.Text = "Acciones Temas";
             this.accionesTemasToolStripMenuItem.Click += new System.EventHandler(this.accionesTemasToolStripMenuItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(195, 6);
+            // 
             // mnuAcciones_SalirVentanaPrincipal
             // 
             this.mnuAcciones_SalirVentanaPrincipal.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
@@ -330,6 +282,14 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_SalirVentanaPrincipal.Text = "Salir";
             this.mnuAcciones_SalirVentanaPrincipal.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
+            // mnuAyuda
+            // 
+            this.mnuAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAyuda_AcercaDe});
+            this.mnuAyuda.Name = "mnuAyuda";
+            this.mnuAyuda.Size = new System.Drawing.Size(53, 20);
+            this.mnuAyuda.Text = "A&yuda";
+            // 
             // mnuAyuda_AcercaDe
             // 
             this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
@@ -338,6 +298,46 @@ namespace DI_UT1_Actividad1._1
             this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
             this.mnuAyuda_AcercaDe.Text = "Acerca de";
             this.mnuAyuda_AcercaDe.Click += new System.EventHandler(this.mnuAyuda_Info_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // dgvTutoriales
+            // 
+            this.dgvTutoriales.AllowUserToAddRows = false;
+            this.dgvTutoriales.AllowUserToDeleteRows = false;
+            this.dgvTutoriales.AllowUserToResizeRows = false;
+            this.dgvTutoriales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTutoriales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvTutoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTutoriales.Location = new System.Drawing.Point(25, 69);
+            this.dgvTutoriales.MultiSelect = false;
+            this.dgvTutoriales.Name = "dgvTutoriales";
+            this.dgvTutoriales.ReadOnly = true;
+            this.dgvTutoriales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTutoriales.Size = new System.Drawing.Size(414, 343);
+            this.dgvTutoriales.TabIndex = 1;
+            // 
+            // btnAccionesTemas
+            // 
+            this.btnAccionesTemas.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAccionesTemas.Image = ((System.Drawing.Image)(resources.GetObject("btnAccionesTemas.Image")));
+            this.btnAccionesTemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccionesTemas.Location = new System.Drawing.Point(573, 102);
+            this.btnAccionesTemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAccionesTemas.Name = "btnAccionesTemas";
+            this.btnAccionesTemas.Size = new System.Drawing.Size(180, 35);
+            this.btnAccionesTemas.TabIndex = 3;
+            this.btnAccionesTemas.Text = "Acciones Temas";
+            this.btnAccionesTemas.UseVisualStyleBackColor = false;
+            this.btnAccionesTemas.Click += new System.EventHandler(this.btnAccionesTemas_Click);
             // 
             // VentanaInicial
             // 

@@ -40,6 +40,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_AnnadirTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_ModificarTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcciones_EliminarTutorial = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda_AcercaDe = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@ namespace DI_UT1_Actividad1._1
             this.btnModificarTema = new System.Windows.Forms.Button();
             this.btnEliminarTema = new System.Windows.Forms.Button();
             this.picTema = new System.Windows.Forms.PictureBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.tutorialesDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tutorialesDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -116,6 +116,7 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_AnnadirTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.mnuAcciones_AnnadirTutorial.Size = new System.Drawing.Size(180, 22);
             this.mnuAcciones_AnnadirTutorial.Text = "Añadir";
+            this.mnuAcciones_AnnadirTutorial.Click += new System.EventHandler(this.mnuAcciones_AnnadirTutorial_Click);
             // 
             // mnuAcciones_ModificarTutorial
             // 
@@ -132,6 +133,11 @@ namespace DI_UT1_Actividad1._1
             this.mnuAcciones_EliminarTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.mnuAcciones_EliminarTutorial.Size = new System.Drawing.Size(180, 22);
             this.mnuAcciones_EliminarTutorial.Text = "Eliminar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuAcciones_SalirVentanaPrincipal
             // 
@@ -206,11 +212,6 @@ namespace DI_UT1_Actividad1._1
             this.picTema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTema.TabIndex = 19;
             this.picTema.TabStop = false;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // VentanaTema
             // 

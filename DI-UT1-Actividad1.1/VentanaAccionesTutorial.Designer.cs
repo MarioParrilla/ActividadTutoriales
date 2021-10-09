@@ -32,6 +32,8 @@ namespace DI_UT1_Actividad1._1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaAccionesTutorial));
             this.mnuTema = new System.Windows.Forms.MenuStrip();
             this.mnuAcciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAcciones_Accion = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAcciones_SalirVentanaPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAyuda_AcercaDe = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,10 +72,24 @@ namespace DI_UT1_Actividad1._1
             // mnuAcciones
             // 
             this.mnuAcciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAcciones_Accion,
+            this.toolStripSeparator1,
             this.mnuAcciones_SalirVentanaPrincipal});
             this.mnuAcciones.Name = "mnuAcciones";
             this.mnuAcciones.Size = new System.Drawing.Size(67, 20);
             this.mnuAcciones.Text = "&Acciones";
+            // 
+            // mnuAcciones_Accion
+            // 
+            this.mnuAcciones_Accion.Name = "mnuAcciones_Accion";
+            this.mnuAcciones_Accion.Size = new System.Drawing.Size(137, 22);
+            this.mnuAcciones_Accion.Text = "[Accion]";
+            this.mnuAcciones_Accion.Click += new System.EventHandler(this.mnuAcciones_Accion_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
             // 
             // mnuAcciones_SalirVentanaPrincipal
             // 
@@ -319,5 +335,7 @@ namespace DI_UT1_Actividad1._1
         private System.Windows.Forms.Label lblVideo;
         private System.Windows.Forms.Button btnVisualizarImagen;
         private System.Windows.Forms.Button btnVisualizarVideo;
+        private System.Windows.Forms.ToolStripMenuItem mnuAcciones_Accion;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

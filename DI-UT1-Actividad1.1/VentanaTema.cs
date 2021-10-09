@@ -48,5 +48,10 @@ namespace DI_UT1_Actividad1._1
         {
             MessageBox.Show("Programa Actividad 1.1 DI - 2DAM\nHecho por Mario Parrilla Maroto ©2021 ", "Acerca de Trabajo Tutoriales", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void mnuAcciones_AnnadirTutorial_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

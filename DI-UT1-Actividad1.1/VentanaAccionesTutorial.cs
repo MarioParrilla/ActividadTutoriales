@@ -145,7 +145,7 @@ namespace DI_UT1_Actividad1._1
         private void Visualizar(Acciones a, String url)
         {
             VentanaVisualizar vv = new VentanaVisualizar(a,url);
-            vv.ShowDialog();
+            vv.Show();
         }
 
         private void Annadir()

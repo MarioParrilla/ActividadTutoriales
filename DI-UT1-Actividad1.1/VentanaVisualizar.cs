@@ -52,7 +52,9 @@ namespace DI_UT1_Actividad1._1
                 else if (a == Acciones.VIDEO)//Si queremos ver un video, activamos el componente y le ponemos su url
                 {
                     //Cogemos de la url la parte que nos interesa buscando los caracteres que se encuentran entre medias
-                    String codigoYoutbe = url.Substring(url.IndexOf("=") + 1, (url.IndexOf("&") - url.IndexOf("=")) - 1);
+                    String codigoYoutbe = "";
+                    if(url.Contains("&")) codigoYoutbe = url.Substring(url.IndexOf("=") + 1, (url.IndexOf("&") - url.IndexOf("=")) - 1);
+                    else codigoYoutbe = url.Substring(url.IndexOf("=") + 1, (url.Length - url.IndexOf("=")) - 1);
 
                     wbYoutube.DocumentText = "<html><head>" +
                         "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +

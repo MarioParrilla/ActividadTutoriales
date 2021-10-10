@@ -61,6 +61,12 @@
     <Compile Include="VentanaAccionesTutorial.Designer.cs">
       <DependentUpon>VentanaAccionesTutorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCarga.Designer.cs">
+      <DependentUpon>VentanaCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +103,14 @@
     <EmbeddedResource Include="VentanaAccionesTutorial.resx">
       <DependentUpon>VentanaAccionesTutorial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCarga.resx">
+      <DependentUpon>VentanaCarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicial.resx">
       <DependentUpon>VentanaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -142,7 +151,7 @@
     <Content Include="Resources\icons\annadir.png" />
     <Content Include="Resources\icons\detalles.png" />
     <Content Include="Resources\icons\eliminar.png" />
-    <Content Include="Resources\icons\cerrar.png" />
+    <Content Include="Resources\icons\salir.png" />
     <Content Include="Resources\icons\modificar.png" />
     <Content Include="Resources\icons\accionesTemas.png" />
     <Content Include="Resources\icons\iconoPrograma.ico" />

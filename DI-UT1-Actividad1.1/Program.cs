@@ -16,7 +16,7 @@ namespace DI_UT1_Actividad1._1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentanaInicial());
+            Application.Run(new VentanaCarga());
         }
     }
 }

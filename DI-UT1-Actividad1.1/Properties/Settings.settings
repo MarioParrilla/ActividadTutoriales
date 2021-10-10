@@ -19,5 +19,8 @@
     <Setting Name="defaultFontColor" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">ControlText</Value>
     </Setting>
+    <Setting Name="CarpetaOrigen" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

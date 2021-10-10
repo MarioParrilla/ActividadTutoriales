@@ -1,4 +1,7 @@
-﻿
+﻿using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+
 namespace DI_UT1_Actividad1._1
 {
     partial class VentanaInicial
@@ -30,7 +33,6 @@ namespace DI_UT1_Actividad1._1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaInicial));
             this.cmbTema = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblTema = new System.Windows.Forms.Label();
@@ -129,7 +131,6 @@ namespace DI_UT1_Actividad1._1
             // btnDetallesTutorial
             // 
             this.btnDetallesTutorial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDetallesTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.detalles;
             this.btnDetallesTutorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetallesTutorial.Location = new System.Drawing.Point(87, 162);
             this.btnDetallesTutorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -143,7 +144,6 @@ namespace DI_UT1_Actividad1._1
             // btnAnnadirTutorial
             // 
             this.btnAnnadirTutorial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAnnadirTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.annadir;
             this.btnAnnadirTutorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnnadirTutorial.Location = new System.Drawing.Point(87, 27);
             this.btnAnnadirTutorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -157,7 +157,6 @@ namespace DI_UT1_Actividad1._1
             // btnModificarTutorial
             // 
             this.btnModificarTutorial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnModificarTutorial.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarTutorial.Image")));
             this.btnModificarTutorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificarTutorial.Location = new System.Drawing.Point(87, 72);
             this.btnModificarTutorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -171,7 +170,6 @@ namespace DI_UT1_Actividad1._1
             // btnEliminarTutorial
             // 
             this.btnEliminarTutorial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEliminarTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.eliminar;
             this.btnEliminarTutorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarTutorial.Location = new System.Drawing.Point(87, 117);
             this.btnEliminarTutorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -211,7 +209,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_AnnadirTutorial
             // 
-            this.mnuAcciones_AnnadirTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.annadir;
             this.mnuAcciones_AnnadirTutorial.Name = "mnuAcciones_AnnadirTutorial";
             this.mnuAcciones_AnnadirTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.mnuAcciones_AnnadirTutorial.Size = new System.Drawing.Size(198, 22);
@@ -220,7 +217,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_ModificarTutorial
             // 
-            this.mnuAcciones_ModificarTutorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuAcciones_ModificarTutorial.Image")));
             this.mnuAcciones_ModificarTutorial.Name = "mnuAcciones_ModificarTutorial";
             this.mnuAcciones_ModificarTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.mnuAcciones_ModificarTutorial.Size = new System.Drawing.Size(198, 22);
@@ -229,7 +225,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_EliminarTutorial
             // 
-            this.mnuAcciones_EliminarTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.eliminar;
             this.mnuAcciones_EliminarTutorial.Name = "mnuAcciones_EliminarTutorial";
             this.mnuAcciones_EliminarTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.mnuAcciones_EliminarTutorial.Size = new System.Drawing.Size(198, 22);
@@ -238,7 +233,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_DetallesTutorial
             // 
-            this.mnuAcciones_DetallesTutorial.Image = global::DI_UT1_Actividad1._1.Properties.Resources.detalles;
             this.mnuAcciones_DetallesTutorial.Name = "mnuAcciones_DetallesTutorial";
             this.mnuAcciones_DetallesTutorial.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.mnuAcciones_DetallesTutorial.Size = new System.Drawing.Size(198, 22);
@@ -252,7 +246,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_Recargar
             // 
-            this.mnuAcciones_Recargar.Image = global::DI_UT1_Actividad1._1.Properties.Resources.recargar;
             this.mnuAcciones_Recargar.Name = "mnuAcciones_Recargar";
             this.mnuAcciones_Recargar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.mnuAcciones_Recargar.Size = new System.Drawing.Size(198, 22);
@@ -261,7 +254,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_AccionesTemas
             // 
-            this.mnuAcciones_AccionesTemas.Image = ((System.Drawing.Image)(resources.GetObject("mnuAcciones_AccionesTemas.Image")));
             this.mnuAcciones_AccionesTemas.Name = "mnuAcciones_AccionesTemas";
             this.mnuAcciones_AccionesTemas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.mnuAcciones_AccionesTemas.Size = new System.Drawing.Size(198, 22);
@@ -275,7 +267,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_SalirVentanaPrincipal
             // 
-            this.mnuAcciones_SalirVentanaPrincipal.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
             this.mnuAcciones_SalirVentanaPrincipal.Name = "mnuAcciones_SalirVentanaPrincipal";
             this.mnuAcciones_SalirVentanaPrincipal.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.mnuAcciones_SalirVentanaPrincipal.Size = new System.Drawing.Size(198, 22);
@@ -292,7 +283,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAyuda_AcercaDe
             // 
-            this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
             this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
             this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
@@ -328,7 +318,6 @@ namespace DI_UT1_Actividad1._1
             // btnAccionesTemas
             // 
             this.btnAccionesTemas.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAccionesTemas.Image = ((System.Drawing.Image)(resources.GetObject("btnAccionesTemas.Image")));
             this.btnAccionesTemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccionesTemas.Location = new System.Drawing.Point(573, 102);
             this.btnAccionesTemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -357,7 +346,6 @@ namespace DI_UT1_Actividad1._1
             this.Controls.Add(this.mnuInicio);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuInicio;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VentanaInicial";

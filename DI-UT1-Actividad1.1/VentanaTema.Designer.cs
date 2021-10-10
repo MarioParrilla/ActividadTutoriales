@@ -104,56 +104,51 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAcciones_AnnadirTema
             // 
-            this.mnuAcciones_AnnadirTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.annadir;
             this.mnuAcciones_AnnadirTema.Name = "mnuAcciones_AnnadirTema";
             this.mnuAcciones_AnnadirTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.mnuAcciones_AnnadirTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_AnnadirTema.Size = new System.Drawing.Size(170, 22);
             this.mnuAcciones_AnnadirTema.Text = "Añadir";
             this.mnuAcciones_AnnadirTema.Click += new System.EventHandler(this.mnuAcciones_AnnadirTema_Click);
             // 
             // mnuAcciones_ModificarTema
             // 
-            this.mnuAcciones_ModificarTema.Image = ((System.Drawing.Image)(resources.GetObject("mnuAcciones_ModificarTema.Image")));
             this.mnuAcciones_ModificarTema.Name = "mnuAcciones_ModificarTema";
             this.mnuAcciones_ModificarTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.mnuAcciones_ModificarTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_ModificarTema.Size = new System.Drawing.Size(170, 22);
             this.mnuAcciones_ModificarTema.Text = "Modificar";
             this.mnuAcciones_ModificarTema.Click += new System.EventHandler(this.mnuAcciones_ModificarTema_Click);
             // 
             // mnuAcciones_EliminarTema
             // 
-            this.mnuAcciones_EliminarTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.eliminar;
             this.mnuAcciones_EliminarTema.Name = "mnuAcciones_EliminarTema";
             this.mnuAcciones_EliminarTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.mnuAcciones_EliminarTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_EliminarTema.Size = new System.Drawing.Size(170, 22);
             this.mnuAcciones_EliminarTema.Text = "Eliminar";
             this.mnuAcciones_EliminarTema.Click += new System.EventHandler(this.mnuAcciones_EliminarTema_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // mnuAcciones_RecargarTema
             // 
-            this.mnuAcciones_RecargarTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.recargar;
             this.mnuAcciones_RecargarTema.Name = "mnuAcciones_RecargarTema";
             this.mnuAcciones_RecargarTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.mnuAcciones_RecargarTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_RecargarTema.Size = new System.Drawing.Size(170, 22);
             this.mnuAcciones_RecargarTema.Text = "Recargar";
             this.mnuAcciones_RecargarTema.Click += new System.EventHandler(this.mnuAcciones_RecargarTema_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
             // mnuAcciones_SalirVentana
             // 
-            this.mnuAcciones_SalirVentana.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
             this.mnuAcciones_SalirVentana.Name = "mnuAcciones_SalirVentana";
             this.mnuAcciones_SalirVentana.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuAcciones_SalirVentana.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_SalirVentana.Size = new System.Drawing.Size(170, 22);
             this.mnuAcciones_SalirVentana.Text = "Salir";
             this.mnuAcciones_SalirVentana.Click += new System.EventHandler(this.mnuAcciones_SalirVentana_Click);
             // 
@@ -167,7 +162,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAyuda_AcercaDe
             // 
-            this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
             this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
             this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
@@ -177,7 +171,6 @@ namespace DI_UT1_Actividad1._1
             // btnAnnadirTema
             // 
             this.btnAnnadirTema.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAnnadirTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.annadir;
             this.btnAnnadirTema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnnadirTema.Location = new System.Drawing.Point(229, 257);
             this.btnAnnadirTema.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -191,7 +184,6 @@ namespace DI_UT1_Actividad1._1
             // btnModificarTema
             // 
             this.btnModificarTema.BackColor = System.Drawing.SystemColors.Control;
-            this.btnModificarTema.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarTema.Image")));
             this.btnModificarTema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificarTema.Location = new System.Drawing.Point(229, 302);
             this.btnModificarTema.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -205,7 +197,6 @@ namespace DI_UT1_Actividad1._1
             // btnEliminarTema
             // 
             this.btnEliminarTema.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEliminarTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.eliminar;
             this.btnEliminarTema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarTema.Location = new System.Drawing.Point(229, 347);
             this.btnEliminarTema.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -255,9 +246,9 @@ namespace DI_UT1_Actividad1._1
             this.Controls.Add(this.btnEliminarTema);
             this.Controls.Add(this.mnuTema);
             this.Controls.Add(this.lblTemas);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VentanaTema";
             this.Text = "Trabajo Tutoriales - Temas";

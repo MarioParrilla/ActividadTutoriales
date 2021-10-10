@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace DI_UT1_Actividad1._1
 {
@@ -24,6 +25,8 @@ namespace DI_UT1_Actividad1._1
 
         private void ventanaTema_Load(object sender, EventArgs e)
         {
+            //Establecemos los iconos de la ventana
+            RellenarIconos();
 
             //Creamos la conexion con la bd
             dbConn = new OleDbConnection();
@@ -34,7 +37,6 @@ namespace DI_UT1_Actividad1._1
             this.BackColor = Properties.Settings.Default.backgroundColor;
             this.Font = Properties.Settings.Default.defaultFont;
             this.ForeColor = Properties.Settings.Default.defaultFontColor;
-
 
             //Establecemos valores predeterminados de la ventana
             this.MaximizeBox = false;
@@ -99,6 +101,24 @@ namespace DI_UT1_Actividad1._1
             }
         }
 
+        private void RellenarIconos()//Ponemos los iconos de los componentes de la ventana
+        {
+            //Icono Ventana
+            this.Icon = new Icon(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/iconoPrograma.ico");
+
+            //Iconos botones
+            btnAnnadirTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
+            btnModificarTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
+            btnEliminarTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/eliminar.png");
+
+            //Iconos menu
+            mnuAcciones_AnnadirTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
+            mnuAcciones_ModificarTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
+            mnuAcciones_EliminarTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/eliminar.png");
+            mnuAcciones_RecargarTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/recargar.png");
+            mnuAcciones_SalirVentana.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/salir.png");
+            mnuAyuda_AcercaDe.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/acercaDe.png");
+        }
         private void ComprobarAcciones()//Comprobamos cuantos elementos hay en la view
         {
             if (dgvTema.SelectedRows.Count == 0)

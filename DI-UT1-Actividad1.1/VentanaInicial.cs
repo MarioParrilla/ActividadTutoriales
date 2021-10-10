@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace DI_UT1_Actividad1._1
 {
@@ -27,6 +28,9 @@ namespace DI_UT1_Actividad1._1
 
         private void VentanaInicial_Load(object sender, EventArgs e)
         {
+            //Establecemos los iconos de la ventana
+            RellenarIconos();
+
             //Realizamos las consultas para cargar los datos
             Consultas();
 
@@ -38,7 +42,7 @@ namespace DI_UT1_Actividad1._1
             //Establecemos valores predeterminados de la ventana
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
+              
             //Desactivamos columnas inecesarias
             dgvTutoriales.Columns["ID_TUTORIAL"].Visible = false;
             dgvTutoriales.Columns["ID_TEMA"].Visible = false;
@@ -84,6 +88,29 @@ namespace DI_UT1_Actividad1._1
                 cmbCategoria.Enabled = false;
             }
             else cmbCategoria.Enabled = true;
+        }
+
+        private void RellenarIconos()//Ponemos los iconos de los componentes de la ventana
+        {
+            //Icono Ventana
+            this.Icon = new Icon(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/iconoPrograma.ico");
+
+            //Iconos botones
+            btnAccionesTemas.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/accionesTemas.png");
+            btnAnnadirTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
+            btnModificarTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
+            btnEliminarTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/eliminar.png");
+            btnDetallesTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/detalles.png");
+
+            //Iconos menu
+            mnuAcciones_AccionesTemas.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/accionesTemas.png");
+            mnuAcciones_AnnadirTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
+            mnuAcciones_ModificarTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
+            mnuAcciones_EliminarTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/eliminar.png");
+            mnuAcciones_DetallesTutorial.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/detalles.png");
+            mnuAcciones_Recargar.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/recargar.png");
+            mnuAcciones_SalirVentanaPrincipal.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/salir.png");
+            mnuAyuda_AcercaDe.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/acercaDe.png");
         }
 
         private void LimpiarComboboxes()//Limpiamos de elementos los comboboxes

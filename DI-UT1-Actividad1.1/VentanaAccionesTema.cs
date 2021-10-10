@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace DI_UT1_Actividad1._1
 {
@@ -16,7 +17,6 @@ namespace DI_UT1_Actividad1._1
         private Tema t = null;
         private Acciones a;
         private OleDbConnection dbConn = null;
-        private OleDbDataReader dr = null;
         private OleDbCommand command = new OleDbCommand();
 
         public VentanaAccionesTema(Tema t, Acciones a)
@@ -28,6 +28,9 @@ namespace DI_UT1_Actividad1._1
 
         private void VentanaAccionesTema_Load(object sender, EventArgs e)
         {
+            //Cargamos iconos ventana
+            RellenarIconos();
+
             //Se establece los valores predeterminados del ventanaTema con los valores de Properties
             this.BackColor = Properties.Settings.Default.backgroundColor;
             this.Font = Properties.Settings.Default.defaultFont;
@@ -36,7 +39,6 @@ namespace DI_UT1_Actividad1._1
             //Establecemos valores predeterminados de la ventana
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
             //Creamos la conexion con la bd
             dbConn = new OleDbConnection();
             dbConn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;"
@@ -48,14 +50,14 @@ namespace DI_UT1_Actividad1._1
                 this.Text = "Trabajo Tutoriales - Añadir";
                 btnAccionTema.Text = "Añadir";
                 mnuAcciones_AccionTema.Text = "Añadir";
-                mnuAcciones_AccionTema.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\annadir.png");
+                mnuAcciones_AccionTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
             }
             else if (a == Acciones.MODIFICAR)
             {
                 this.Text = "Trabajo Tutoriales - Modificar";
                 btnAccionTema.Text = "Modificar";
                 mnuAcciones_AccionTema.Text = "Modificar";
-                mnuAcciones_AccionTema.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\modificar.png");
+                mnuAcciones_AccionTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
                 RellenarCampos();
             }
 
@@ -83,6 +85,13 @@ namespace DI_UT1_Actividad1._1
             else if (txtImagen.Text.Length < 1) throw new Exception("No ha introducido valores!");
         }
 
+        private void RellenarIconos()//Ponemos los iconos de los componentes de la ventana
+        {
+            //Icono Ventana
+            this.Icon = new Icon(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/iconoPrograma.ico");
+            mnuAcciones_SalirVentanaTema.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/salir.png");
+            mnuAyuda_AcercaDe.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/acercaDe.png");
+        }
         private void Visualizar(Acciones a, String url)
         {
             //Creamos la ventana para visualizar la imagen

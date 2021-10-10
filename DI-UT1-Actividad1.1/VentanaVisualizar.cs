@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace DI_UT1_Actividad1._1
 
         private void VentanaVisualizar_Load(object sender, EventArgs e)
         {
+
             //Se establece los valores predeterminados del ventanaTema con los valores de Properties
             this.BackColor = Properties.Settings.Default.backgroundColor;
             this.Font = Properties.Settings.Default.defaultFont;
@@ -33,6 +35,7 @@ namespace DI_UT1_Actividad1._1
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             picImagenUrl.Visible = false;
             wbYoutube.Visible = false;
+            this.Icon = new Icon(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/iconoPrograma.ico");
 
             Visualizar();
         }

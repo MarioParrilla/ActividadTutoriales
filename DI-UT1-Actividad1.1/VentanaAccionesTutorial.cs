@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace DI_UT1_Actividad1._1
 {
@@ -27,6 +28,9 @@ namespace DI_UT1_Actividad1._1
 
         private void VentanaAccionesTutorial_Load(object sender, EventArgs e)
         {
+            //Cargamos iconos ventana
+            RellenarIconos();
+
             //Se establece los valores predeterminados del ventanaTema con los valores de Properties
             this.BackColor = Properties.Settings.Default.backgroundColor;
             this.Font = Properties.Settings.Default.defaultFont;
@@ -50,14 +54,14 @@ namespace DI_UT1_Actividad1._1
                 this.Text = "Trabajo Tutoriales - Añadir";
                 btnAccion.Text = "Añadir";
                 mnuAcciones_Accion.Text = "Añadir";
-                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\annadir.png");
+                mnuAcciones_Accion.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/annadir.png");
             }
             else if(accion == Acciones.MODIFICAR)
             {
                 this.Text = "Trabajo Tutoriales - Modificar";
                 btnAccion.Text = "Modificar";
                 mnuAcciones_Accion.Text = "Modificar";
-                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\modificar.png");
+                mnuAcciones_Accion.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/modificar.png");
                 RellenarCampos();
                 
             }
@@ -66,7 +70,7 @@ namespace DI_UT1_Actividad1._1
                 this.Text = "Trabajo Tutoriales - Detalles";
                 btnAccion.Text = "Volver";
                 mnuAcciones_Accion.Text = "Volver";
-                mnuAcciones_Accion.Image = Image.FromFile(@"C:\Users\Mario\Desktop\2DAM\DI\unidad1\Actividad1.1\DI-UT1-Actividad1.1\DI-UT1-Actividad1.1\Resources\icons\volver.png");
+                mnuAcciones_Accion.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/volver.png");
                 RellenarCampos();
                 Deshabilitar();
             }
@@ -85,6 +89,13 @@ namespace DI_UT1_Actividad1._1
             mnuAcciones_Accion.ShortcutKeys = Keys.Control | Keys.D;
         }
 
+        private void RellenarIconos()//Ponemos los iconos de los componentes de la ventana
+        {
+            //Icono Ventana
+            this.Icon = new Icon(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/iconoPrograma.ico");
+            mnuAcciones_SalirVentanaPrincipal.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/salir.png");
+            mnuAyuda_AcercaDe.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"/../../Resources/Icons/acercaDe.png");
+        }
         private void Deshabilitar()//Desactivamos botones
         {
             txtTitulo.Enabled = false;

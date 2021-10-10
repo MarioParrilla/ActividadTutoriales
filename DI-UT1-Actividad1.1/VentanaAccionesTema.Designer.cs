@@ -133,21 +133,20 @@ namespace DI_UT1_Actividad1._1
             // 
             this.mnuAcciones_AccionTema.Name = "mnuAcciones_AccionTema";
             this.mnuAcciones_AccionTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.mnuAcciones_AccionTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_AccionTema.Size = new System.Drawing.Size(161, 22);
             this.mnuAcciones_AccionTema.Text = "[Accion]";
             this.mnuAcciones_AccionTema.Click += new System.EventHandler(this.mnuAcciones_AccionTema_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
             // 
             // mnuAcciones_SalirVentanaTema
             // 
-            this.mnuAcciones_SalirVentanaTema.Image = global::DI_UT1_Actividad1._1.Properties.Resources.cerrar;
             this.mnuAcciones_SalirVentanaTema.Name = "mnuAcciones_SalirVentanaTema";
             this.mnuAcciones_SalirVentanaTema.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuAcciones_SalirVentanaTema.Size = new System.Drawing.Size(180, 22);
+            this.mnuAcciones_SalirVentanaTema.Size = new System.Drawing.Size(161, 22);
             this.mnuAcciones_SalirVentanaTema.Text = "Salir";
             this.mnuAcciones_SalirVentanaTema.Click += new System.EventHandler(this.mnuAcciones_SalirVentanaTema_Click);
             // 
@@ -161,7 +160,6 @@ namespace DI_UT1_Actividad1._1
             // 
             // mnuAyuda_AcercaDe
             // 
-            this.mnuAyuda_AcercaDe.Image = global::DI_UT1_Actividad1._1.Properties.Resources.acercaDe;
             this.mnuAyuda_AcercaDe.Name = "mnuAyuda_AcercaDe";
             this.mnuAyuda_AcercaDe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.mnuAyuda_AcercaDe.Size = new System.Drawing.Size(163, 22);
@@ -184,7 +182,7 @@ namespace DI_UT1_Actividad1._1
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VentanaAccionesTema";
-            this.Text = "W";
+            this.Text = "Trabajo Tutoriales -  [ACCION]";
             this.Load += new System.EventHandler(this.VentanaAccionesTema_Load);
             this.mnuTema.ResumeLayout(false);
             this.mnuTema.PerformLayout();

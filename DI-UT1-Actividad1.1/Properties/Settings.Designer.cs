@@ -59,5 +59,14 @@ namespace DI_UT1_Actividad1._1.Properties {
                 return ((global::System.Drawing.Color)(this["defaultFontColor"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CarpetaOrigen {
+            get {
+                return ((string)(this["CarpetaOrigen"]));
+            }
+        }
     }
 }
